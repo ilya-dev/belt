@@ -37,5 +37,17 @@ class Funcs extends Toolset {
         return $this->cached[$hash];
     }
 
+    /**
+     * Wrap a closure inside another closure
+     *
+     * @param  \Closure $closure
+     * @param  \Closure $wrapper
+     * @return mixed
+     */
+    public function wrap(\Closure $closure, \Closure $wrapper)
+    {
+        return $wrapper($closure);
+    }
+
 }
 

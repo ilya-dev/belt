@@ -40,7 +40,7 @@ A handful of tools for PHP devs
 + Functions [in progress]
   + cache [done] 
   + once
-  + wrap
+  + wrap [done]
   + after
   + compose
 + Objects

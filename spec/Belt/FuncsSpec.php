@@ -20,5 +20,20 @@ class FuncsSpec extends ObjectBehavior {
         $this->cache($closure)->shouldBeEqualTo($this->cache($closure));
     }
 
+    function it_can_wrap_a_closure_inside_another_closure()
+    {
+        $closure = function()
+        {
+            return 'foo';
+        };
+
+        $wrapper = function($closure)
+        {
+            return $closure().'bar';
+        };
+
+        $this->wrap($closure, $wrapper)->shouldReturn('foobar');
+    }
+
 }
 
