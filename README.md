@@ -62,14 +62,14 @@ A handful of tools for PHP devs
   + isBoolean
   + isDate
   + isNull
-+ Utilities
++ Utilities [in progress]
   + with
   + times
   + id
   + escape
-+ Chaining
-  + chain
-  + value
++ Chaining [done]
+  + chain [done]
+  + value [done]
  
 ## Status
 
