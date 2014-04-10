@@ -67,5 +67,18 @@ class FuncsSpec extends ObjectBehavior {
         $this->shouldNotThrow('LogicException')->duringOnce($closure);
     }
 
+    function it_can_make_a_closure_callable_only_after_a_number_of_tries()
+    {
+        $closure = function()
+        {
+            return 'foo';
+        };
+
+        $this->after(2, $closure)->shouldBe(null);
+        $this->after(2, $closure)->shouldBe(null);
+
+        $this->after(2, $closure)->shouldBe('foo');
+    }
+
 }
 

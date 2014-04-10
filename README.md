@@ -37,11 +37,11 @@ A handful of tools for PHP devs
   + intersection
   + range
   + indexOf
-+ Functions [in progress]
++ Functions [done]
   + cache [done] 
   + once [done]
   + wrap [done]
-  + after
+  + after [done]
   + compose [done]
 + Objects
   + keys

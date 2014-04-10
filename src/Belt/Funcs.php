@@ -17,15 +17,24 @@ class Funcs extends Toolset {
     protected $called;
 
     /**
+     * "Delayed" closures
+     *
+     * @var array
+     */
+    protected $delayed;
+
+    /**
      * The constructor
      *
      * @return void
      */
     public function __construct()
     {
-        $this->cached = [];
+        $this->cached  = [];
 
-        $this->called = [];
+        $this->called  = [];
+
+        $this->delayed = [];
     }
 
     /**
@@ -93,6 +102,37 @@ class Funcs extends Toolset {
 
             $this->called[$hash] = true;
         }
+    }
+
+    /**
+     * Only call a closure after the exact number of tries
+     *
+     * @param  integer  $number
+     * @param  \Closure $closure
+     * @return mixed
+     */
+    public function after($number, \Closure $closure)
+    {
+        $hash = \spl_object_hash($closure);
+
+        if (isset($this->delayed[$hash]))
+        {
+            $closure = $this->delayed[$hash];
+
+            return $closure();
+        }
+
+        $this->delayed[$hash] = function() use($number, $closure)
+        {
+            static $tries = 0;
+
+            $tries += 1;
+
+            if ($tries === $number)
+            {
+                return $closure();
+            }
+        };
     }
 
 }
