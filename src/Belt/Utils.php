@@ -35,5 +35,20 @@ class Utils extends Toolset {
         return $value;
     }
 
+    /**
+     * Invoke a $closure $number of times
+     *
+     * @param  integer  $number
+     * @param  \Closure $closure
+     * @return void
+     */
+    public function times($number, \Closure $closure)
+    {
+        foreach (\range(1, $number) as $index)
+        {
+            $closure();
+        }
+    }
+
 }
 

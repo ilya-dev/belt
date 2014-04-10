@@ -37,8 +37,8 @@ A handful of tools for PHP devs
   + intersection
   + range
   + indexOf
-+ Functions
-  + cache
++ Functions [in progress]
+  + cache 
   + once
   + wrap
   + after
@@ -62,9 +62,9 @@ A handful of tools for PHP devs
   + isBoolean
   + isDate
   + isNull
-+ Utilities [in progress]
++ Utilities [done]
   + with [done] 
-  + times
+  + times [done]
   + id [done]
   + escape [done]
 + Chaining [done]

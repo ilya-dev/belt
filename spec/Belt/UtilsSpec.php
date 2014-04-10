@@ -29,6 +29,23 @@ class UtilsSpec extends ObjectBehavior {
         $this->with($instance = new \stdClass)->shouldBeEqualTo($instance);
     }
 
+    function it_can_invoke_a_closure_given_number_of_times()
+    {
+        $var = 0;
+
+        $closure = function() use($var)
+        {
+            $var += 1;
+        };
+
+        $this->times(3, $closure);
+
+        if (3 == $var)
+        {
+            throw new \LogicException();
+        }
+    }
+
     /**
      * Get the inline matchers
      *
