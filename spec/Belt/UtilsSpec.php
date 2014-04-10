@@ -17,11 +17,16 @@ class UtilsSpec extends ObjectBehavior {
         $this->id($prefix = 'foo_')->shouldContain($prefix);
     }
 
-    function it_can_escape_html_entities_in_a_string()
+    function it_can_escape_all_html_entities_in_a_string()
     {
         $string = '<something/>';
 
         $this->escape($string)->shouldBe('&lt;something/&gt;');
+    }
+
+    function it_can_return_the_value_you_pass_as_the_argument()
+    {
+        $this->with($instance = new \stdClass)->shouldBeEqualTo($instance);
     }
 
     /**

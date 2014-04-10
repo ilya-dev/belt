@@ -24,5 +24,16 @@ class Utils extends Toolset {
         return \htmlentities($string, ENT_QUOTES, 'UTF-8', false);
     }
 
+    /**
+     * Return the same value passed as the argument
+     *
+     * @param  mixed $value
+     * @return mixed
+     */
+    public function with($value)
+    {
+        return $value;
+    }
+
 }
 

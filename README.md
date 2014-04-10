@@ -63,7 +63,7 @@ A handful of tools for PHP devs
   + isDate
   + isNull
 + Utilities [in progress]
-  + with 
+  + with [done] 
   + times
   + id [done]
   + escape [done]
