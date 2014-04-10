@@ -38,7 +38,7 @@ A handful of tools for PHP devs
   + range
   + indexOf
 + Functions [in progress]
-  + cache 
+  + cache [done] 
   + once
   + wrap
   + after

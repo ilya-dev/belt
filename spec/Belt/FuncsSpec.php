@@ -10,7 +10,15 @@ class FuncsSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Funcs');
     }
 
+    function it_can_cache_the_returned_value()
+    {
+        $closure = function()
+        {
+            return \uniqid();
+        };
 
+        $this->cache($closure)->shouldBeEqualTo($this->cache($closure));
+    }
 
 }
 
