@@ -3,11 +3,18 @@
 class Funcs extends Toolset {
 
     /**
-     * Cached results
+     * Cached closures
      *
      * @var array
      */
     protected $cached;
+
+    /**
+     * Called closures
+     *
+     * @var array
+     */
+    protected $called;
 
     /**
      * The constructor
@@ -17,6 +24,8 @@ class Funcs extends Toolset {
     public function __construct()
     {
         $this->cached = [];
+
+        $this->called = [];
     }
 
     /**
@@ -66,6 +75,24 @@ class Funcs extends Toolset {
         }
 
         return $result;
+    }
+
+    /**
+     * Call a closure only once and ignore next calls
+     *
+     * @param  \Closure $closure
+     * @return void
+     */
+    public function once(\Closure $closure)
+    {
+        $hash = \spl_object_hash($closure);
+
+        if ( ! isset($this->called[$hash]))
+        {
+            $closure();
+
+            $this->called[$hash] = true;
+        }
     }
 
 }

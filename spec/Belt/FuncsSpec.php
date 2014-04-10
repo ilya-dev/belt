@@ -52,5 +52,20 @@ class FuncsSpec extends ObjectBehavior {
         $this->compose($closures, ['foo'])->shouldBe(true);
     }
 
+    function it_can_lock_a_closure_so_it_can_be_called_only_once()
+    {
+        $closure = function()
+        {
+            static $switch;
+
+            if ( ! is_null($switch)) throw new \LogicException;
+
+            $switch = true;
+        };
+
+        $this->once($closure);
+        $this->shouldNotThrow('LogicException')->duringOnce($closure);
+    }
+
 }
 

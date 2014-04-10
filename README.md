@@ -39,7 +39,7 @@ A handful of tools for PHP devs
   + indexOf
 + Functions [in progress]
   + cache [done] 
-  + once
+  + once [done]
   + wrap [done]
   + after
   + compose [done]
