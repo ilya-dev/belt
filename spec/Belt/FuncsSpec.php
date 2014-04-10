@@ -35,5 +35,22 @@ class FuncsSpec extends ObjectBehavior {
         $this->wrap($closure, $wrapper)->shouldReturn('foobar');
     }
 
+    function it_can_make_a_composition_of_an_array_of_closures()
+    {
+        $closures = [];
+
+        $closures[] = function($var)
+        {
+            return $var;
+        };
+
+        $closures[] = function($var)
+        {
+            return 'foo' == $var;
+        };
+
+        $this->compose($closures, ['foo'])->shouldBe(true);
+    }
+
 }
 

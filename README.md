@@ -42,7 +42,7 @@ A handful of tools for PHP devs
   + once
   + wrap [done]
   + after
-  + compose
+  + compose [done]
 + Objects
   + keys
   + values
