@@ -63,10 +63,10 @@ A handful of tools for PHP devs
   + isDate
   + isNull
 + Utilities [in progress]
-  + with
+  + with 
   + times
-  + id
-  + escape
+  + id [done]
+  + escape [done]
 + Chaining [done]
   + chain [done]
   + value [done]
