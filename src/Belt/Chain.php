@@ -32,6 +32,7 @@ class Chain {
         }
 
         $this->object = $object;
+        $this->value  = null;
     }
 
     /**
@@ -53,7 +54,10 @@ class Chain {
      */
     public function __call($method, array $arguments = array())
     {
-        \array_unshift($arguments, $this->value);
+        if ( ! \is_null($this->value))
+        {
+            \array_unshift($arguments, $this->value);
+        }
 
         $this->value = \call_user_func_array([$this->object, $method], $arguments);
 

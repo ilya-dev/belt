@@ -17,7 +17,7 @@ class ChainSpec extends ObjectBehavior {
 
     function it_allows_you_to_chain_method_calls(Dummy $mock)
     {
-        $mock->getFoo(null)->willReturn('foo');
+        $mock->getFoo()->willReturn('foo');
         $mock->getBar('foo')->willReturn('bar');
 
         $object = $this->getWrappedObject();
