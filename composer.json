@@ -1,0 +1,19 @@
+{
+    "name": "ilya/belt",
+    "description": "A handful of tools for PHP devs",
+    "require-dev": {
+        "phpspec/phpspec": "~2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ilya S",
+            "email": "public.ilya.s@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Belt\\": "src/Belt/"
+        }
+    }
+}
