@@ -81,6 +81,24 @@ class CollectionsSpec extends ObjectBehavior {
         $this->shuffle($collection)->shouldNotBe($collection);
     }
 
+    function it_can_map_through_an_array()
+    {
+        $collection = [
+            'foo' => 'bar',
+            'baz' => 'wow',
+        ];
+
+        $iterator = function($key, $value)
+        {
+            return 'foo' == $key ? null : $value;
+        };
+
+        $this->map($collection, $iterator)->shouldBe([
+            'foo' => null,
+            'baz' => 'wow',
+        ]);
+    }
+
 }
 
 class DummyCountable implements \Countable {

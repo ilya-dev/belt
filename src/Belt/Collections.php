@@ -18,6 +18,23 @@ class Collections {
     }
 
     /**
+     * "Map" through a collection
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return array
+     */
+    public function map(array $collection, \Closure $iterator)
+    {
+        foreach ($collection as $key => $node)
+        {
+            $collection[$key] = $iterator($key, $node);
+        }
+
+        return $collection;
+    }
+
+    /**
      * Convert a value to an array
      *
      * @param  mixed $value

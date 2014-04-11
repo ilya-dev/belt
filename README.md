@@ -6,7 +6,7 @@ A handful of tools for PHP devs
 
 + Collections [in progress]
   + each [done]
-  + map
+  + map [done]
   + filter
   + reduce
   + max
