@@ -55,7 +55,8 @@ A handful of tools for PHP devs
   + isEqual
   + isEmpty
   + isObject
-  + isArray
+  + isArray [done]
+  + isTraversable [done]
   + isFunction
   + isString
   + isNumber
