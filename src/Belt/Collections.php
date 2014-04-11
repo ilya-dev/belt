@@ -178,5 +178,23 @@ class Collections {
         return \array_map($function, $collection);
     }
 
+    /**
+     * Reduce the collection into a single value
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @param  mixed    $initial
+     * @return mixed
+     */
+    public function reduce(array $collection, \Closure $iterator, $initial = 0)
+    {
+        foreach ($collection as $node)
+        {
+            $initial = $iterator($initial, $node);
+        }
+
+        return $initial;
+    }
+
 }
 

@@ -149,6 +149,18 @@ class CollectionsSpec extends ObjectBehavior {
         $this->reject($collection, $iterator)->shouldBe([3, 5, 7]);
     }
 
+    function it_can_reduce_the_collection_into_a_single_value()
+    {
+        $collection = [1, 2, 3, 4];
+
+        $iterator = function($latest, $value)
+        {
+            return $latest + $value;
+        };
+
+        $this->reduce($collection, $iterator, 0)->shouldBe(10);
+    }
+
 }
 
 class DummyCountable implements \Countable {

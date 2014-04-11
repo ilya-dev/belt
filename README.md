@@ -8,7 +8,7 @@ A handful of tools for PHP devs
   + each [done]
   + map [done]
   + filter
-  + reduce
+  + reduce [done]
   + max
   + min
   + size [node]
