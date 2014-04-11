@@ -53,5 +53,12 @@ class ArraysSpec extends ObjectBehavior {
         $this->pack($elements)->shouldBe(['foo', 42]);
     }
 
+    function it_can_flatten_an_array()
+    {
+        $elements = ['such', ['wow', ['amaze']]];
+
+        $this->flatten($elements)->shouldBe(['such', 'wow', 'amaze']);
+    }
+
 }
 

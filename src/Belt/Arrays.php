@@ -65,5 +65,30 @@ class Arrays extends Toolset {
         return \array_values(\array_filter($elements));
     }
 
+    /**
+     * "Flatten" an array
+     *
+     * @param  array $elements
+     * @return array
+     */
+    public function flatten(array $elements)
+    {
+        $level = [];
+
+        foreach ($elements as $node)
+        {
+            if (\is_array($node))
+            {
+                $level = \array_merge($level, $this->flatten($node));
+            }
+            else
+            {
+                $level[] = $node;
+            }
+        }
+
+        return $level;
+    }
+
 }
 
