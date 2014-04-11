@@ -79,5 +79,16 @@ class Objects extends Toolset {
         return \is_string($value);
     }
 
+    /**
+     * Determine whether the given value is an instance of \Closure
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isFunction($value)
+    {
+        return $value instanceof \Closure;
+    }
+
 }
 

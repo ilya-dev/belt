@@ -63,6 +63,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isString('foo')->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_a_closure()
+    {
+        $this->isFunction(new \stdClass)->shouldBe(false);
+
+        $this->isFunction(function() {})->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
