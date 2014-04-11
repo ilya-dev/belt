@@ -57,5 +57,16 @@ class Objects extends Toolset {
         return \is_integer($value) or \is_float($value);
     }
 
+    /**
+     * Determine whether the given value is boolean
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isBoolean($value)
+    {
+        return \is_bool($value);
+    }
+
 }
 

@@ -49,6 +49,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isNumber(34.789)->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_boolean()
+    {
+        $this->isBoolean(43)->shouldBe(false);
+
+        $this->isBoolean(false)->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
