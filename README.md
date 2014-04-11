@@ -58,7 +58,7 @@ A handful of tools for PHP devs
   + isArray [done]
   + isTraversable [done]
   + isFunction
-  + isString
+  + isString [done]
   + isNumber [done]
   + isBoolean [done]
   + isDate [done]

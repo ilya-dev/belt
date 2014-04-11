@@ -56,6 +56,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isBoolean(false)->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_a_string()
+    {
+        $this->isString(null)->shouldBe(false);
+
+        $this->isString('foo')->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

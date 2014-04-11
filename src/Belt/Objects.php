@@ -68,5 +68,16 @@ class Objects extends Toolset {
         return \is_bool($value);
     }
 
+    /**
+     * Determine whether the given value is a string
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isString($value)
+    {
+        return \is_string($value);
+    }
+
 }
 
