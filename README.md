@@ -20,7 +20,7 @@ A handful of tools for PHP devs
   + any [done]
   + pluck [done]
   + contains [done]
-  + invoke
+  + invoke [done]
   + reject
 + Arrays
   + first

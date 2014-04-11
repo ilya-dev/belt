@@ -108,6 +108,15 @@ class CollectionsSpec extends ObjectBehavior {
         $this->contains($collection, false)->shouldBe(true);
     }
 
+    function it_can_run_a_function_across_all_elements_in_a_collection()
+    {
+        $collection = [
+            '  foo  ', '  bar', 'baz  '
+        ];
+
+        $this->invoke($collection, '\\trim')->shouldBe(['foo', 'bar', 'baz']);
+    }
+
 }
 
 class DummyCountable implements \Countable {

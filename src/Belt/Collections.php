@@ -132,5 +132,17 @@ class Collections {
         return false;
     }
 
+    /**
+     * Run $function across all elements in $collection
+     *
+     * @param  array  $collection
+     * @param  string $function
+     * @return array
+     */
+    public function invoke(array $collection, $function)
+    {
+        return \array_map($function, $collection);
+    }
+
 }
 
