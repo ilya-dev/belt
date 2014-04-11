@@ -40,6 +40,15 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isDate(new \DateTime)->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_a_float_or_an_integer()
+    {
+        $this->isNumber([])->shouldBe(false);
+
+        $this->isNumber(-89)->shouldBe(true);
+
+        $this->isNumber(34.789)->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

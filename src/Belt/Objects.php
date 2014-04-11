@@ -46,5 +46,16 @@ class Objects extends Toolset {
         return $value instanceof \DateTime;
     }
 
+    /**
+     * Determine whether the given value is a float or an integer
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isNumber($value)
+    {
+        return \is_integer($value) or \is_float($value);
+    }
+
 }
 
