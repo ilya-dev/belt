@@ -43,7 +43,7 @@ A handful of tools for PHP devs
   + wrap [done]
   + after [done]
   + compose [done]
-+ Objects
++ Objects [in progress]
   + keys
   + values
   + copy
@@ -61,7 +61,7 @@ A handful of tools for PHP devs
   + isNumber
   + isBoolean
   + isDate
-  + isNull
+  + isNull [done]
 + Utilities [done]
   + with [done] 
   + times [done]
