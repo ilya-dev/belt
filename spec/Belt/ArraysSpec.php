@@ -28,5 +28,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->initial($elements, 3)->shouldBe([2, 3, 4]);
     }
 
+    function it_can_return_the_rest_of_the_array_elements()
+    {
+        $elements = [2, 3, 4, 5, 6, 7];
+
+        $this->rest($elements)->shouldBe([3, 4, 5, 6, 7]);
+
+        $this->rest($elements, 2)->shouldBe([4, 5, 6, 7]);
+    }
+
 }
 

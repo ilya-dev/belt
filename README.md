@@ -25,7 +25,7 @@ A handful of tools for PHP devs
 + Arrays [in progress]
   + first [done]
   + initial [done]
-  + rest
+  + rest [done]
   + last
   + pack
   + flatten

@@ -28,5 +28,17 @@ class Arrays extends Toolset {
         return \array_slice($elements, 0, \count($elements) - $amount);
     }
 
+    /**
+     * Get the rest of the array elements
+     *
+     * @param  array   $elements
+     * @param  integer $index
+     * @return array
+     */
+    public function rest(array $elements, $index = 1)
+    {
+        return \array_slice($elements, $index);
+    }
+
 }
 
