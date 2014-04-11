@@ -19,7 +19,7 @@ A handful of tools for PHP devs
   + all
   + any [done]
   + pluck [done]
-  + contains
+  + contains [done]
   + invoke
   + reject
 + Arrays

@@ -115,5 +115,22 @@ class Collections {
         return $values;
     }
 
+    /**
+     * Determine if the collection contains a given value (strict check)
+     *
+     * @param  array $collection
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function contains(array $collection, $value)
+    {
+        foreach ($collection as $node)
+        {
+            if (($node) === $value) return true;
+        }
+
+        return false;
+    }
+
 }
 

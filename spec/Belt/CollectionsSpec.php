@@ -99,6 +99,15 @@ class CollectionsSpec extends ObjectBehavior {
         ]);
     }
 
+    function it_can_determine_whether_a_collection_contains_a_value()
+    {
+        $collection = ['foo', false, 42];
+
+        $this->contains($collection, null)->shouldBe(false);
+
+        $this->contains($collection, false)->shouldBe(true);
+    }
+
 }
 
 class DummyCountable implements \Countable {
