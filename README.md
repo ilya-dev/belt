@@ -4,7 +4,7 @@ A handful of tools for PHP devs
 
 ## Roadmap
 
-+ Collections
++ Collections [in progress]
   + each
   + map
   + filter
@@ -12,7 +12,7 @@ A handful of tools for PHP devs
   + max
   + min
   + size
-  + toArray
+  + toArray [done]
   + groupBy
   + sortBy
   + shuffle
