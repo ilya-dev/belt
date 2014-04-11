@@ -46,5 +46,12 @@ class ArraysSpec extends ObjectBehavior {
         $this->last($elements, 3)->shouldBe([5, 6, 7]);
     }
 
+    function it_can_remove_falsy_values()
+    {
+        $elements = [false, 'foo', 0, '', 42];
+
+        $this->pack($elements)->shouldBe(['foo', 42]);
+    }
+
 }
 

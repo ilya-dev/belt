@@ -27,7 +27,7 @@ A handful of tools for PHP devs
   + initial [done]
   + rest [done]
   + last [done]
-  + pack
+  + pack [done]
   + flatten
   + without
   + unique

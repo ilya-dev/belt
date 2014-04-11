@@ -54,5 +54,16 @@ class Arrays extends Toolset {
         return \count($elements) == 1 ? \reset($elements) : $elements;
     }
 
+    /**
+     * Remove falsy values
+     *
+     * @param  array $elements
+     * @return array
+     */
+    public function pack(array $elements)
+    {
+        return \array_values(\array_filter($elements));
+    }
+
 }
 
