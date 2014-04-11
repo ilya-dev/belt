@@ -24,7 +24,7 @@ A handful of tools for PHP devs
   + reject [done]
 + Arrays [in progress]
   + first [done]
-  + initial
+  + initial [done]
   + rest
   + last
   + pack

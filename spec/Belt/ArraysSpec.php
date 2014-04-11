@@ -19,5 +19,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->first($elements, 3)->shouldBe([2, 3, 4]);
     }
 
+    function it_can_exclude_the_last_n_elements()
+    {
+        $elements = [2, 3, 4, 5, 6, 7];
+
+        $this->initial($elements)->shouldBe([2, 3, 4, 5, 6]);
+
+        $this->initial($elements, 3)->shouldBe([2, 3, 4]);
+    }
+
 }
 

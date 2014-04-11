@@ -16,5 +16,17 @@ class Arrays extends Toolset {
         return \count($elements) == 1 ? \reset($elements) : $elements;
     }
 
+    /**
+     * Exclude the last n elements
+     *
+     * @param  array   $elements
+     * @param  integer $amount
+     * @return array
+     */
+    public function initial(array $elements, $amount = 1)
+    {
+        return \array_slice($elements, 0, \count($elements) - $amount);
+    }
+
 }
 
