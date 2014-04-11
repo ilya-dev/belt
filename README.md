@@ -52,7 +52,7 @@ A handful of tools for PHP devs
   + methods
   + tap
   + has
-  + isEqual
+  + isEqual [done]
   + isEmpty
   + isObject [done]
   + isArray [done]

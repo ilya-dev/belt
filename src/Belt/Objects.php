@@ -101,5 +101,17 @@ class Objects extends Toolset {
         return \is_object($value);
     }
 
+    /**
+     * Compare two values using === (strict)
+     *
+     * @param  mixed $left
+     * @param  mixed $right
+     * @return boolean
+     */
+    public function isEqual($left, $right)
+    {
+        return ($left) === $right;
+    }
+
 }
 

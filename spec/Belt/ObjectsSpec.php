@@ -77,6 +77,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isObject(new \stdClass)->shouldBe(true);
     }
 
+    function it_can_compare_two_values_strictly()
+    {
+        $this->isEqual(null, false)->shouldBe(false);
+
+        $this->isEqual('foo', 'foo')->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
