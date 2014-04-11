@@ -34,5 +34,26 @@ class Collections {
         return false;
     }
 
+    /**
+     * Extract an array of values associated with the $key
+     *
+     * @param  array  $collection
+     * @param  string $key
+     * @return array
+     */
+    public function pluck(array $collection, $key)
+    {
+        $values = [];
+
+        foreach ($collection as $node)
+        {
+            if ( ! isset($node[$key])) continue;
+
+            $values[] = $node[$key];
+        }
+
+        return $values;
+    }
+
 }
 

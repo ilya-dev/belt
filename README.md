@@ -18,7 +18,7 @@ A handful of tools for PHP devs
   + shuffle
   + all
   + any [done]
-  + pluck
+  + pluck [done]
   + contains
   + invoke
   + reject

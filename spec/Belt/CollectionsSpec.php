@@ -35,5 +35,18 @@ class CollectionsSpec extends ObjectBehavior {
         $this->any([67, 45], $iterator)->shouldReturn(false);
     }
 
+    function it_can_extract_an_array_of_values_associated_with_a_given_key()
+    {
+        $collection = [
+            ['name' => 'Jack'], ['name' => 'Ian'], ['name' => 'Glen'],
+        ];
+
+        $this->pluck($collection, 'name')->shouldBe(['Jack', 'Ian', 'Glen']);
+
+        $collection[1] = []; // break the structure
+
+        $this->pluck($collection, 'name')->shouldBe(['Jack', 'Glen']);
+    }
+
 }
 
