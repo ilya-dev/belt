@@ -19,7 +19,7 @@ A handful of tools for PHP devs
   + all
   + any
   + pluck
-  + has
+  + contains
   + invoke
   + reject
 + Arrays
