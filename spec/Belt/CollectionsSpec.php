@@ -117,6 +117,23 @@ class CollectionsSpec extends ObjectBehavior {
         $this->invoke($collection, '\\trim')->shouldBe(['foo', 'bar', 'baz']);
     }
 
+    function it_can_determine_whether_all_elements_in_a_collection_pass_a_test()
+    {
+        $collection = [
+            null, false, 0
+        ];
+
+        $iterator = function($value)
+        {
+            return empty($value);
+        };
+
+        $this->all($collection, $iterator)->shouldBe(true);
+
+        $collection[] = true;
+
+        $this->all($collection, $iterator)->shouldBe(false);
+    }
 }
 
 class DummyCountable implements \Countable {

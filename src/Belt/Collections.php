@@ -95,6 +95,23 @@ class Collections {
     }
 
     /**
+     * Whether all values in $collection pass the truth test ($iterator)
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return boolean
+     */
+    public function all(array $collection, \Closure $iterator)
+    {
+        foreach ($collection as $node)
+        {
+            if ( ! $iterator($node)) return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Extract an array of values associated with the $key
      *
      * @param  array  $collection

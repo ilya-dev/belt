@@ -16,7 +16,7 @@ A handful of tools for PHP devs
   + groupBy
   + sortBy
   + shuffle [done]
-  + all
+  + all [done]
   + any [done]
   + pluck [done]
   + contains [done]
