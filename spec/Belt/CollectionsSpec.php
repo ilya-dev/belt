@@ -134,6 +134,21 @@ class CollectionsSpec extends ObjectBehavior {
 
         $this->all($collection, $iterator)->shouldBe(false);
     }
+
+    function it_can_run_a_test_across_given_collection_and_remove_failing_items()
+    {
+        $collection = [
+            2, 3, 4, 5, 6, 7
+        ];
+
+        $iterator = function($value)
+        {
+            return ($value % 2) > 0;
+        };
+
+        $this->reject($collection, $iterator)->shouldBe([3, 5, 7]);
+    }
+
 }
 
 class DummyCountable implements \Countable {

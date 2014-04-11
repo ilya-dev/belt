@@ -112,6 +112,23 @@ class Collections {
     }
 
     /**
+     * Run $iterator and remove all failing items in $collection
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return array
+     */
+    public function reject(array $collection, \Closure $iterator)
+    {
+        foreach ($collection as $key => $node)
+        {
+            if ( ! $iterator($node)) unset($collection[$key]);
+        }
+
+        return \array_values($collection);
+    }
+
+    /**
      * Extract an array of values associated with the $key
      *
      * @param  array  $collection

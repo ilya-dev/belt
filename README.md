@@ -21,7 +21,7 @@ A handful of tools for PHP devs
   + pluck [done]
   + contains [done]
   + invoke [done]
-  + reject
+  + reject [done]
 + Arrays
   + first
   + initial
