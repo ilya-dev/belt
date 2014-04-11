@@ -129,6 +129,18 @@ class Collections {
     }
 
     /**
+     * Remove items that do not pass the truth test ($iterator)
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return array
+     */
+    public function filter(array $collection, \Closure $iterator)
+    {
+        return $this->reject($collection, $iterator);
+    }
+
+    /**
      * Extract an array of values associated with the $key
      *
      * @param  array  $collection
