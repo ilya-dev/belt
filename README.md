@@ -53,7 +53,7 @@ A handful of tools for PHP devs
   + tap
   + has
   + isEqual [done]
-  + isEmpty
+  + isEmpty [done]
   + isObject [done]
   + isArray [done]
   + isTraversable [done]

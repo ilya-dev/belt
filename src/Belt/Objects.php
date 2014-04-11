@@ -113,5 +113,16 @@ class Objects extends Toolset {
         return ($left) === $right;
     }
 
+    /**
+     * Determine whether the given value is empty
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isEmpty($value)
+    {
+        return empty($value);
+    }
+
 }
 

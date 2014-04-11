@@ -84,6 +84,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isEqual('foo', 'foo')->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_empty()
+    {
+        $this->isEmpty(true)->shouldBe(false);
+
+        $this->isEmpty(null)->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
