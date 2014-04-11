@@ -29,6 +29,22 @@ class Collections {
     }
 
     /**
+     * Get the "size" of a given value
+     *
+     * @param  array|\Countable $value
+     * @return null|integer
+     */
+    public function size($value)
+    {
+        if (\is_array($value) or ($value instanceof \Countable))
+        {
+            return \count($value);
+        }
+
+        return null;
+    }
+
+    /**
      * Whether any values in the $collection pass the $iterator
      *
      * @param  array    $collection

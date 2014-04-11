@@ -11,7 +11,7 @@ A handful of tools for PHP devs
   + reduce
   + max
   + min
-  + size
+  + size [node]
   + toArray [done]
   + groupBy
   + sortBy

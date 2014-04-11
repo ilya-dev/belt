@@ -65,5 +65,23 @@ class CollectionsSpec extends ObjectBehavior {
         $this->each($collection, $iterator);
     }
 
+    function it_can_calculate_the_size_of_a_value()
+    {
+        $this->size([1, 2, 3])->shouldBe(3);
+
+        $this->size(false)->shouldBe(null);
+
+        $this->size(new DummyCountable)->shouldBe(4);
+    }
+
+}
+
+class DummyCountable implements \Countable {
+
+    public function count()
+    {
+        return 4;
+    }
+
 }
 
