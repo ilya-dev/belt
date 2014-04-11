@@ -17,7 +17,7 @@ A handful of tools for PHP devs
   + sortBy
   + shuffle
   + all
-  + any
+  + any [done]
   + pluck
   + contains
   + invoke

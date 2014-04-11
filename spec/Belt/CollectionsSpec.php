@@ -21,5 +21,19 @@ class CollectionsSpec extends ObjectBehavior {
         $this->toArray($instance)->shouldBe(['foo' => 'bar']);
     }
 
+    function it_returns_true_if_any_value_passes_the_truth_test()
+    {
+        $collection = [17, 83, 61, 57, 14, 95];
+
+        $iterator = function($number)
+        {
+            return 0 == ($number % 2);
+        };
+
+        $this->any($collection, $iterator)->shouldReturn(true);
+
+        $this->any([67, 45], $iterator)->shouldReturn(false);
+    }
+
 }
 
