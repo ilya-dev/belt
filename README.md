@@ -5,7 +5,7 @@ A handful of tools for PHP devs
 ## Roadmap
 
 + Collections [in progress]
-  + each
+  + each [done]
   + map
   + filter
   + reduce

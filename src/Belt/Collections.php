@@ -2,6 +2,20 @@
 
 class Collections {
 
+    /**
+     * Iterate through a collection
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return void
+     */
+    public function each(array $collection, \Closure $iterator)
+    {
+        foreach ($collection as $key => $node)
+        {
+            $iterator($key, $node);
+        }
+    }
 
     /**
      * Convert a value to an array

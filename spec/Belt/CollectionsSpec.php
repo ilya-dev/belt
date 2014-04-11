@@ -48,5 +48,22 @@ class CollectionsSpec extends ObjectBehavior {
         $this->pluck($collection, 'name')->shouldBe(['Jack', 'Glen']);
     }
 
+    function it_can_iterate_through_a_collection()
+    {
+        $collection = [
+            'foo', 'bar', 'baz'
+        ];
+
+        $iterator = function($key, $value) use($collection)
+        {
+            if ($collection[$key] != $value)
+            {
+                throw new \LogicException();
+            }
+        };
+
+        $this->each($collection, $iterator);
+    }
+
 }
 
