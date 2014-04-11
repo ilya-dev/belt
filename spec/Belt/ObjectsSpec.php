@@ -33,6 +33,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isTraversable('string')->shouldBe(false);
     }
 
+    function it_can_determine_whether_a_value_is_an_instance_of_DateTime()
+    {
+        $this->isDate(new \stdClass)->shouldBe(false);
+
+        $this->isDate(new \DateTime)->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

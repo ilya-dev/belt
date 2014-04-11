@@ -35,5 +35,16 @@ class Objects extends Toolset {
         return \is_array($value);
     }
 
+    /**
+     * Determine whether the given value is an instance of \DateTime
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isDate($value)
+    {
+        return $value instanceof \DateTime;
+    }
+
 }
 

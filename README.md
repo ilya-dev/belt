@@ -61,7 +61,7 @@ A handful of tools for PHP devs
   + isString
   + isNumber
   + isBoolean
-  + isDate
+  + isDate [done]
   + isNull [done]
 + Utilities [done]
   + with [done] 
