@@ -17,5 +17,27 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isNull(null)->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_an_array()
+    {
+        $this->isArray(null)->shouldBe(false);
+
+        $this->isArray([])->shouldBe(true);
+    }
+
+    function it_can_determine_whether_a_value_is_traversable()
+    {
+        $this->isTraversable([])->shouldBe(true);
+
+        $this->isTraversable(new DummyTraversable)->shouldBe(true);
+
+        $this->isTraversable('string')->shouldBe(false);
+    }
+
+}
+
+class DummyTraversable implements \IteratorAggregate {
+
+    public function getIterator() {}
+
 }
 
