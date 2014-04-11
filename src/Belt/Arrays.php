@@ -40,5 +40,19 @@ class Arrays extends Toolset {
         return \array_slice($elements, $index);
     }
 
+    /**
+     * Get the last n elements
+     *
+     * @param  array   $elements
+     * @param  integer $amount
+     * @return mixed|array
+     */
+    public function last(array $elements, $amount = 1)
+    {
+        $elements = \array_slice($elements, \count($elements) - $amount);
+
+        return \count($elements) == 1 ? \reset($elements) : $elements;
+    }
+
 }
 

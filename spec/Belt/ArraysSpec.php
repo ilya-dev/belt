@@ -37,5 +37,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->rest($elements, 2)->shouldBe([4, 5, 6, 7]);
     }
 
+    function it_can_return_the_last_n_elements()
+    {
+        $elements = [2, 3, 4, 5, 6, 7];
+
+        $this->last($elements)->shouldBe(7);
+
+        $this->last($elements, 3)->shouldBe([5, 6, 7]);
+    }
+
 }
 
