@@ -22,8 +22,8 @@ A handful of tools for PHP devs
   + contains [done]
   + invoke [done]
   + reject [done]
-+ Arrays
-  + first
++ Arrays [in progress]
+  + first [done]
   + initial
   + rest
   + last
