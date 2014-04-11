@@ -74,6 +74,13 @@ class CollectionsSpec extends ObjectBehavior {
         $this->size(new DummyCountable)->shouldBe(4);
     }
 
+    function it_can_shuffle_an_array()
+    {
+        $collection = [15, 52, 47, 74, 27, 95, 32, 82];
+
+        $this->shuffle($collection)->shouldNotBe($collection);
+    }
+
 }
 
 class DummyCountable implements \Countable {

@@ -15,7 +15,7 @@ A handful of tools for PHP devs
   + toArray [done]
   + groupBy
   + sortBy
-  + shuffle
+  + shuffle [done]
   + all
   + any [done]
   + pluck [done]

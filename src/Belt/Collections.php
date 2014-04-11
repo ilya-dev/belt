@@ -45,6 +45,19 @@ class Collections {
     }
 
     /**
+     * "Shuffle" an array
+     *
+     * @param  array $collection
+     * @return array
+     */
+    public function shuffle(array $collection)
+    {
+        \shuffle($collection);
+
+        return $collection;
+    }
+
+    /**
      * Whether any values in the $collection pass the $iterator
      *
      * @param  array    $collection
