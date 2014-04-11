@@ -70,6 +70,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isFunction(function() {})->shouldBe(true);
     }
 
+    function it_can_determine_whether_a_value_is_an_object()
+    {
+        $this->isObject(3.14)->shouldBe(false);
+
+        $this->isObject(new \stdClass)->shouldBe(true);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

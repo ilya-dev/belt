@@ -90,5 +90,16 @@ class Objects extends Toolset {
         return $value instanceof \Closure;
     }
 
+    /**
+     * Determine whether the given value is an object
+     *
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isObject($value)
+    {
+        return \is_object($value);
+    }
+
 }
 
