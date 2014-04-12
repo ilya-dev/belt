@@ -4,6 +4,9 @@
 
 A handful of tools for PHP developers
 
+In case you want to try it out now:
+`composer require ilya/belt:0.1.0`
+
 ## What It Offers
 
 + **60+** useful functions
