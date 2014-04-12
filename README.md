@@ -34,7 +34,7 @@ A handful of tools for PHP devs
   + union
   + difference [done]
   + zip [done]
-  + intersection
+  + intersection [done]
   + range [done]
   + indexOf [done]
 + Functions [done]

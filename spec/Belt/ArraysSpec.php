@@ -119,5 +119,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->indexOf($elements, $element)->shouldBe(3);
     }
 
+    function it_can_compute_the_intersection_of_two_arrays()
+    {
+        $one = [2, 3, 4, 5, 6, 7];
+
+        $another = [1, 3, 5, 7, 9];
+
+        $this->intersection($one, $another)->shouldBe([3, 5, 7]);
+    }
+
 }
 

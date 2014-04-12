@@ -177,5 +177,17 @@ class Arrays extends Toolset {
         return \array_search($element, $elements, true);
     }
 
+    /**
+     * Return the intersection of two arrays
+     *
+     * @param  array $one
+     * @param  array $another
+     * @return array
+     */
+    public function intersection(array $one, array $another)
+    {
+        return \array_values(\array_intersect($one, $another));
+    }
+
 }
 
