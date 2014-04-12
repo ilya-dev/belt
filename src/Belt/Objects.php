@@ -3,6 +3,17 @@
 class Objects extends Toolset {
 
     /**
+     * Return a copy of $value
+     *
+     * @param  mixed $value
+     * @return mixed
+     */
+    public function copy($value)
+    {
+        return \is_object($value) ? (clone $value) : $value;
+    }
+
+    /**
      * Get the names of methods available to the object
      *
      * @param  mixed $object

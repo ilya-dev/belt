@@ -96,6 +96,17 @@ class ObjectsSpec extends ObjectBehavior {
         $this->methods(new DummyMethods)->shouldBe(['foo', 'bar']);
     }
 
+    function it_can_return_a_copy_of_the_value()
+    {
+        $value = ['just', 'a', 'dumb', 'array'];
+
+        $this->copy($value)->shouldBeEqualTo($value);
+
+        $this->copy($instance = new \stdClass)->shouldNotBeEqualTo($instance);
+
+        $this->copy($instance)->shouldBeLike($instance);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
