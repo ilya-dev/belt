@@ -3,6 +3,20 @@
 class Objects extends Toolset {
 
     /**
+     * Invoke $closure on $object, then return $object
+     *
+     * @param  mixed    $object
+     * @param  \Closure $closure
+     * @return mixed
+     */
+    public function tap($object, $closure)
+    {
+        $closure($object);
+
+        return $object;
+    }
+
+    /**
      * Determine whether the object has the key
      *
      * @param  mixed   $object

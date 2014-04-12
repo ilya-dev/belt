@@ -151,6 +151,16 @@ class ObjectsSpec extends ObjectBehavior {
         $this->has($object, 'baz')->shouldBe(false);
     }
 
+    function it_can_invoke_the_closure_on_the_object_and_then_return_the_object()
+    {
+        $closure = function($object)
+        {
+            $object->foo = 'bar';
+        };
+
+        $this->tap($object = new \stdClass, $closure)->shouldBe($object);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
