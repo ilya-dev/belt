@@ -133,11 +133,22 @@ class Belt {
      * @param  array  $arguments
      * @return mixed
      */
+    public function __call($method, array $arguments = array())
+    {
+        return \call_user_func_array([$this, 'run'], [$method, $arguments]);
+    }
+
+    /**
+     * Handle dynamic static calls
+     *
+     * @param  string $method
+     * @param  array  $arguments
+     * @return mixed
+     */
     public static function __callStatic($method, array $arguments = array())
     {
-        $callable = [new static, 'run'];
-
-        return \call_user_func_array($callable, [$method, $arguments]);
+        return \call_user_func_array([new static, $method], $arguments);
     }
 
 }
+
