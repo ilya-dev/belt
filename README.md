@@ -4,7 +4,11 @@ A handful of tools for PHP developers
 
 ## What It Offers
 
-**60+** useful functions
++ **60+** useful functions
++ support for chaining
++ ability to use the facade `Belt` or a dedicated component (e.g. `Belt\Utilities`)
++ fully tested
++ source code is clean and documented
 
 [more documentation will be here]
 
@@ -13,12 +17,10 @@ A handful of tools for PHP developers
 ### Plans
 
 + add support for `PHP 5.6` - leverage *arguments unpacking* and *variadic functions*
-+ `Belt\Belt::methods()` instead of `Belt\Objects::methods()`
-+ refactoring!
 
 ### Features
 
-+ Collections [done]
++ **Collections** [done]
   + each [done]
   + map [done]
   + filter [done]
@@ -36,7 +38,7 @@ A handful of tools for PHP developers
   + contains [done]
   + invoke [done]
   + reject [done]
-+ Arrays [done]
++ **Arrays** [done]
   + first [done]
   + initial [done]
   + rest [done]
@@ -51,13 +53,13 @@ A handful of tools for PHP developers
   + intersection [done]
   + range [done]
   + indexOf [done]
-+ Functions [done]
++ **Functions** [done]
   + cache [done] 
   + once [done]
   + wrap [done]
   + after [done]
   + compose [done]
-+ Objects [done]
++ **Objects** [done]
   + keys [done]
   + values [done]
   + copy [done]
@@ -77,12 +79,9 @@ A handful of tools for PHP developers
   + isBoolean [done]
   + isDate [done]
   + isNull [done]
-+ Utilities [done]
++ **Utilities** [done]
   + with [done] 
   + times [done]
   + id [done]
   + escape [done]
-+ Chaining [done]
-  + chain [done]
-  + value [done]
 
