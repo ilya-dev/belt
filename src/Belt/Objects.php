@@ -3,6 +3,18 @@
 class Objects extends Toolset {
 
     /**
+     * Determine whether the object has the key
+     *
+     * @param  mixed   $object
+     * @param  string  $key
+     * @return boolean
+     */
+    public function has($object, $key)
+    {
+        return \in_array($key, $this->keys($object));
+    }
+
+    /**
      * Get the keys
      *
      * @param  mixed $object

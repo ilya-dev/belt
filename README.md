@@ -51,7 +51,7 @@ A handful of tools for PHP devs
   + defaults [done]
   + methods [done]
   + tap
-  + has
+  + has [done]
   + isEqual [done]
   + isEmpty [done]
   + isObject [done]

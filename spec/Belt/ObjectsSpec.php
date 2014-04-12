@@ -142,6 +142,15 @@ class ObjectsSpec extends ObjectBehavior {
         $this->values($object)->shouldBe([2, 3, 4]);
     }
 
+    function it_can_determine_whether_the_object_has_the_key()
+    {
+        $object = (object) ['foo' => 'bar'];
+
+        $this->has($object, 'foo')->shouldBe(true);
+
+        $this->has($object, 'baz')->shouldBe(false);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
