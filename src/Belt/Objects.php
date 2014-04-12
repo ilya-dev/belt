@@ -3,6 +3,24 @@
 class Objects extends Toolset {
 
     /**
+     * Get the names of methods available to the object
+     *
+     * @param  mixed $object
+     * @return array
+     */
+    public function methods($object)
+    {
+        $methods = (new \ReflectionClass($object))->getMethods(\ReflectionMethod::IS_PUBLIC);
+
+        return \array_map(function(\ReflectionMethod $method)
+        {
+
+            return $method->getName();
+
+        }, $methods);
+    }
+
+    /**
      * Determine whether the given value is null
      *
      * @param  mixed $value

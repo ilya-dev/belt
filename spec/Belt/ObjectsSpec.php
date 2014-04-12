@@ -91,6 +91,11 @@ class ObjectsSpec extends ObjectBehavior {
         $this->isEmpty(null)->shouldBe(true);
     }
 
+    function it_can_return_the_names_of_methods_available_to_the_object()
+    {
+        $this->methods(new DummyMethods)->shouldBe(['foo', 'bar']);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
@@ -99,3 +104,11 @@ class DummyTraversable implements \IteratorAggregate {
 
 }
 
+class DummyMethods {
+
+    public function foo() {}
+    public function bar() {}
+
+    private function baz() {}
+
+}

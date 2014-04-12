@@ -49,7 +49,7 @@ A handful of tools for PHP devs
   + copy
   + extends
   + defaults
-  + methods
+  + methods [done]
   + tap
   + has
   + isEqual [done]
