@@ -11,8 +11,8 @@ class Belt {
         'Belt\Arrays',
         'Belt\Collections',
         'Belt\Objects',
-        'Belt\Funcs',
-        'Belt\Utils',
+        'Belt\Functions',
+        'Belt\Utilities',
     ];
 
     /**
