@@ -48,7 +48,7 @@ A handful of tools for PHP devs
   + values
   + copy [done]
   + extend [done]
-  + defaults
+  + defaults [done]
   + methods [done]
   + tap
   + has

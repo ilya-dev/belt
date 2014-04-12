@@ -116,6 +116,18 @@ class ObjectsSpec extends ObjectBehavior {
         $this->extend($source, $destination)->shouldBeLike($source);
     }
 
+    function it_can_fill_in_any_missing_values_using_defaults()
+    {
+        $object = (object) ['foo' => 'bar'];
+
+        $defaults = [(object) ['baz' => 'wow'], (object) ['foo' => 'such']];
+
+        $this->defaults($object, $defaults)->shouldBeLike((object)[
+            'foo' => 'bar',
+            'baz' => 'wow',
+        ]);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

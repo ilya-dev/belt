@@ -20,6 +20,36 @@ class Objects extends Toolset {
     }
 
     /**
+     * Fill in any missing values using $defaults
+     *
+     * @param  mixed $object
+     * @param  mixed $defaults
+     * @return mixed
+     */
+    public function defaults($object, $defaults)
+    {
+        if (\is_array($defaults))
+        {
+            foreach ($defaults as $default)
+            {
+                $this->defaults($object, $default);
+            }
+
+            return $object;
+        }
+
+        foreach ($defaults as $key => $value)
+        {
+            if ( ! \property_exists($object, $key))
+            {
+                $object->{$key} = $value;
+            }
+        }
+
+        return $object;
+    }
+
+    /**
      * Return a copy of $value
      *
      * @param  mixed $value
