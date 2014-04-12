@@ -46,8 +46,8 @@ A handful of tools for PHP devs
 + Objects [in progress]
   + keys
   + values
-  + copy [copy]
-  + extend
+  + copy [done]
+  + extend [done]
   + defaults
   + methods [done]
   + tap

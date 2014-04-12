@@ -3,6 +3,23 @@
 class Objects extends Toolset {
 
     /**
+     * Copy all properties from $source to $destination
+     *
+     * @param  mixed $source
+     * @param  mixed $destination
+     * @return mixed
+     */
+    public function extend($source, $destination)
+    {
+        foreach($source as $key => $value)
+        {
+            $destination->{$key} = $value;
+        }
+
+        return $destination;
+    }
+
+    /**
      * Return a copy of $value
      *
      * @param  mixed $value

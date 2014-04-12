@@ -107,6 +107,15 @@ class ObjectsSpec extends ObjectBehavior {
         $this->copy($instance)->shouldBeLike($instance);
     }
 
+    function it_can_copy_all_properties_from_the_source_object_to_the_destination_object()
+    {
+        $source = (object) ['foo' => 'bar', 'baz' => 'wow'];
+
+        $destination = new \stdClass;
+
+        $this->extend($source, $destination)->shouldBeLike($source);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {
