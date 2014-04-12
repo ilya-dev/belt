@@ -110,5 +110,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->zip($one, $another)->shouldBe([2, 3, 4, 5, 6, 1, 7, 8, 9]);
     }
 
+    function it_can_return_the_index_of_the_first_match()
+    {
+        $elements = [4, 7, 8, 9, 11, 18];
+
+        $element = 9;
+
+        $this->indexOf($elements, $element)->shouldBe(3);
+    }
+
 }
 

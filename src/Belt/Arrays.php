@@ -165,5 +165,17 @@ class Arrays extends Toolset {
         return \array_merge($one, $another);
     }
 
+    /**
+     * Get the index of the first match
+     *
+     * @param  array $elements
+     * @param  mixed $element
+     * @return integer
+     */
+    public function indexOf(array $elements, $element)
+    {
+        return \array_search($element, $elements, true);
+    }
+
 }
 
