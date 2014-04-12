@@ -4,13 +4,13 @@ A handful of tools for PHP devs
 
 ## Roadmap
 
-+ Collections [in progress]
++ Collections [done]
   + each [done]
   + map [done]
   + filter [done]
   + reduce [done]
   + max [done]
-  + min
+  + min [done]
   + size [node]
   + toArray [done]
   + groupBy [done]

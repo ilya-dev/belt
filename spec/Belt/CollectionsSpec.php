@@ -207,6 +207,13 @@ class CollectionsSpec extends ObjectBehavior {
         $this->max($collection)->shouldBe(7624);
     }
 
+    function it_can_return_the_minimum_value_from_the_collection()
+    {
+        $collection = [67, 7624, 214, 2, 17, 6262, 155, 62];
+
+        $this->min($collection)->shouldBe(2);
+    }
+
 }
 
 class DummyCountable implements \Countable {

@@ -258,5 +258,18 @@ class Collections extends Toolset {
         return \end($collection);
     }
 
+    /**
+     * Return the minimum value from the collection
+     *
+     * @param  array $collection
+     * @return mixed
+     */
+    public function min(array $collection)
+    {
+        \sort($collection);
+
+        return \reset($collection);
+    }
+
 }
 
