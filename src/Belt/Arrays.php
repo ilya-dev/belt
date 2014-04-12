@@ -136,5 +136,22 @@ class Arrays extends Toolset {
         return \array_values($elements);
     }
 
+    /**
+     * Remove all instances of $ignore found in $elements (=== used)
+     *
+     * @param  array $elements
+     * @param  array $ignore
+     * @return array
+     */
+    public function without(array $elements, array $ignore)
+    {
+        foreach ($elements as $key => $node)
+        {
+            if (\in_array($node, $ignore)) unset($elements[$key]);
+        }
+
+        return \array_values($elements);
+    }
+
 }
 

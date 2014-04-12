@@ -29,7 +29,7 @@ A handful of tools for PHP devs
   + last [done]
   + pack [done]
   + flatten [done]
-  + without
+  + without [done]
   + unique [done]
   + union
   + difference [done]

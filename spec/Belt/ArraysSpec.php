@@ -92,5 +92,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->unique($elements, $iterator)->shouldBe([1, 3, 3, 5, 5, 1]);
     }
 
+    function it_can_remove_all_instances_from_the_array()
+    {
+        $elements = ['foo', 'baz', 'bar', 'wow', 'doge'];
+
+        $ignore = ['baz', 'wow'];
+
+        $this->without($elements, $ignore)->shouldBe(['foo', 'bar', 'doge']);
+    }
+
 }
 
