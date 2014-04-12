@@ -1,6 +1,7 @@
 {
     "name": "ilya/belt",
     "description": "A handful of tools for PHP devs",
+    "keywords": ["php", "utilities", "tools", "arrays", "collections", "objects", "functions"],
     "require-dev": {
         "phpspec/phpspec": "~2"
     },
