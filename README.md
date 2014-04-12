@@ -1,8 +1,22 @@
-# Belt
+# Belt [beta]
 
-A handful of tools for PHP devs
+A handful of tools for PHP developers
 
-## Roadmap
+## What It Offers
+
+**60+** useful functions
+
+[more documentation will be here]
+
+## Development
+
+### Plans
+
++ add support for `PHP 5.6` - leverage *arguments unpacking* and *variadic functions*
++ `Belt\Belt::methods()` instead of `Belt\Objects::methods()`
++ refactoring!
+
+### Features
 
 + Collections [done]
   + each [done]
@@ -71,7 +85,4 @@ A handful of tools for PHP devs
 + Chaining [done]
   + chain [done]
   + value [done]
- 
-## Status
 
-> The project is in the development state
