@@ -20,9 +20,10 @@ class Chain {
      * Wrap an object so you can "chain" method calls
      *
      * @param  mixed $object
+     * @param  mixed $value
      * @return void
      */
-    public function __construct($object)
+    public function __construct($object, $value = null)
     {
         if ( ! \is_object($object))
         {
@@ -32,7 +33,7 @@ class Chain {
         }
 
         $this->object = $object;
-        $this->value  = null;
+        $this->value  = $value;
     }
 
     /**

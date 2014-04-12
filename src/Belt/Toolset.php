@@ -5,11 +5,12 @@ abstract class Toolset {
     /**
      * Start a new "chain"
      *
+     * @param  mixed $value
      * @return \Belt\Chain
      */
-    public function chain()
+    public function chain($value = null)
     {
-        return new Chain($this);
+        return new Chain($this, $value);
     }
 
 }
