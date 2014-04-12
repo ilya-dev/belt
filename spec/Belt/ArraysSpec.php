@@ -128,5 +128,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->intersection($one, $another)->shouldBe([3, 5, 7]);
     }
 
+    function it_can_return_an_array_containing_the_unique_items()
+    {
+        $one = [1, 2, 3, 4, 5];
+
+        $another = [1, 2, 3, 4, 6];
+
+        $this->union($one, $another)->shouldBe([1, 2, 3, 4, 5, 6]);
+    }
+
 }
 

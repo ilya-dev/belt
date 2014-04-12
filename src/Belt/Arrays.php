@@ -189,5 +189,17 @@ class Arrays extends Toolset {
         return \array_values(\array_intersect($one, $another));
     }
 
+    /**
+     * Returns an array containing the unique items
+     *
+     * @param  array $one
+     * @param  array $another
+     * @return array
+     */
+    public function union(array $one, array $another)
+    {
+        return $this->unique($this->zip($one, $another));
+    }
+
 }
 

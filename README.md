@@ -22,7 +22,7 @@ A handful of tools for PHP devs
   + contains [done]
   + invoke [done]
   + reject [done]
-+ Arrays [in progress]
++ Arrays [done]
   + first [done]
   + initial [done]
   + rest [done]
@@ -31,7 +31,7 @@ A handful of tools for PHP devs
   + flatten [done]
   + without [done]
   + unique [done]
-  + union
+  + union [done]
   + difference [done]
   + zip [done]
   + intersection [done]
