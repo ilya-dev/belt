@@ -208,5 +208,21 @@ class Collections extends Toolset {
         return $initial;
     }
 
+    /**
+     * Returns $collection sorted in ascending order based on $iterator results
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return array
+     */
+    public function sortBy(array $collection, \Closure $iterator)
+    {
+        $collection = \array_map($iterator, $collection);
+
+        \sort($collection);
+
+        return \array_values($collection);
+    }
+
 }
 

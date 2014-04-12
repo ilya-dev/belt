@@ -173,6 +173,18 @@ class CollectionsSpec extends ObjectBehavior {
         $this->filter($collection, $iterator)->shouldBe([2, 4]);
     }
 
+    function it_can_sort_a_collection_in_ascending_order_based_on_iterator_results()
+    {
+        $collection = [2, 3, 4, 5, 6, 7];
+
+        $iterator = function($number)
+        {
+            return ($number * -1);
+        };
+
+        $this->sortBy($collection, $iterator)->shouldBe([-7, -6, -5, -4, -3, -2]);
+    }
+
 }
 
 class DummyCountable implements \Countable {
