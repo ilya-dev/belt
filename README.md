@@ -1,5 +1,7 @@
 # Belt [beta]
 
+[![Build Status](https://travis-ci.org/ilya-dev/belt.svg?branch=master)](https://travis-ci.org/ilya-dev/belt)
+
 A handful of tools for PHP developers
 
 ## What It Offers
