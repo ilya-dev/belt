@@ -60,6 +60,15 @@ class BeltSpec extends ObjectBehavior {
         $this->run('foo', ['baz'])->shouldBe('baz');
     }
 
+    function it_determines_whether_the_module_exists()
+    {
+        $this->hasModule('foobar')->shouldBe(false);
+
+        $this->addModule('foobar');
+
+        $this->hasModule('foobar')->shouldBe(true);
+    }
+
 }
 
 class DummyMethods2 {

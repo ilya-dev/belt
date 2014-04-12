@@ -38,20 +38,42 @@ class Belt {
     {
         if ( ! \is_null($instance))
         {
-            if ( ! \in_array($module, $this->modules))
+            if ( ! $this->hasModule($module))
             {
-                $this->modules[] = $module;
+                $this->addModule($module);
             }
 
-            return $this->instances[$module] = $instance;
+            return ($this->instances[$module] = $instance);
         }
 
-        if (\in_array($module, $this->modules))
+        if ($this->hasModule($module))
         {
-            return $this->instances[$module] = new $module;
+            return ($this->instances[$module] = new $module);
         }
 
         throw new \UnexpectedValueException("Module {$module} does not exist");
+    }
+
+    /**
+     * Determine whether the module exists
+     *
+     * @param  string $module
+     * @return boolean
+     */
+    public function hasModule($module)
+    {
+        return \in_array($module, $this->modules);
+    }
+
+    /**
+     * Add a new module
+     *
+     * @param  string $module
+     * @return void
+     */
+    public function addModule($module)
+    {
+        $this->modules[] = $module;
     }
 
     /**
