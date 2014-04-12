@@ -200,6 +200,13 @@ class CollectionsSpec extends ObjectBehavior {
         ]);
     }
 
+    function it_can_return_the_maximum_value_from_the_collection()
+    {
+        $collection = [2, 67, 7624, 214, 6262, 155, 62];
+
+        $this->max($collection)->shouldBe(7624);
+    }
+
 }
 
 class DummyCountable implements \Countable {

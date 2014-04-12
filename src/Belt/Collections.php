@@ -245,5 +245,18 @@ class Collections extends Toolset {
         return $groups;
     }
 
+    /**
+     * Return the maximum value from the collection
+     *
+     * @param  array $collection
+     * @return mixed
+     */
+    public function max(array $collection)
+    {
+        \sort($collection);
+
+        return \end($collection);
+    }
+
 }
 

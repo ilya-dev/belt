@@ -9,7 +9,7 @@ A handful of tools for PHP devs
   + map [done]
   + filter [done]
   + reduce [done]
-  + max
+  + max [done]
   + min
   + size [node]
   + toArray [done]
