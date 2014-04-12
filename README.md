@@ -32,7 +32,7 @@ A handful of tools for PHP devs
   + without
   + unique
   + union
-  + difference
+  + difference [done]
   + zip
   + intersection
   + range [done]

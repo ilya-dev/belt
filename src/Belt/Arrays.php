@@ -103,5 +103,17 @@ class Arrays extends Toolset {
         return \range($from, $to, $step);
     }
 
+    /**
+     * Compute the difference between the two
+     *
+     * @param  array $one
+     * @param  array $another
+     * @return array
+     */
+    public function difference(array $one, array $another)
+    {
+        return \array_values(\array_diff($one, $another));
+    }
+
 }
 

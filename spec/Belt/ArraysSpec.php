@@ -69,5 +69,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->range(5, 1, 2)->shouldBe([1, 3, 5]);
     }
 
+    function it_can_compute_the_difference_between_two_arrays()
+    {
+        $one = [1, 2, 3, 4, 5];
+
+        $another = [1, 3, 5];
+
+        $this->difference($one, $another)->shouldBe([2, 4]);
+    }
+
 }
 
