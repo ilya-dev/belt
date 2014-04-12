@@ -1,9 +1,5 @@
 <?php namespace Belt;
 
-/**
- * Class Belt
- * @package Belt
- */
 class Belt {
 
     /**
