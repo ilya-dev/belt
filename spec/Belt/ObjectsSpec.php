@@ -135,6 +135,13 @@ class ObjectsSpec extends ObjectBehavior {
         $this->keys($object)->shouldBe(['foo', 'bar', 'baz']);
     }
 
+    function it_can_return_the_values()
+    {
+        $object = (object) ['foo' => 2, 'bar' => 3, 'baz' => 4];
+
+        $this->values($object)->shouldBe([2, 3, 4]);
+    }
+
 }
 
 class DummyTraversable implements \IteratorAggregate {

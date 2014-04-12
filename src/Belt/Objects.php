@@ -6,11 +6,22 @@ class Objects extends Toolset {
      * Get the keys
      *
      * @param  mixed $object
-     * @return mixed
+     * @return array
      */
     public function keys($object)
     {
         return \array_keys((array) $object);
+    }
+
+    /**
+     * Get the values
+     *
+     * @param  mixed $object
+     * @return array
+     */
+    public function values($object)
+    {
+        return \array_values((array) $object);
     }
 
     /**
