@@ -53,11 +53,21 @@ class BeltSpec extends ObjectBehavior {
         $this->hasMethod($instance, 'bar')->shouldBe(false);
     }
 
+    function it_runs_a_method_and_returns_the_output()
+    {
+        $this->load('bar', new DummyMethods2);
+
+        $this->run('foo', ['baz'])->shouldBe('baz');
+    }
+
 }
 
 class DummyMethods2 {
 
-    public function foo() {}
+    public function foo($var = 'wow')
+    {
+        return $var;
+    }
 
 }
 

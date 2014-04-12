@@ -1,5 +1,9 @@
 <?php namespace Belt;
 
+/**
+ * Class Belt
+ * @package Belt
+ */
 class Belt {
 
     /**
@@ -34,6 +38,11 @@ class Belt {
     {
         if ( ! \is_null($instance))
         {
+            if ( ! \in_array($module, $this->modules))
+            {
+                $this->modules[] = $module;
+            }
+
             return $this->instances[$module] = $instance;
         }
 
@@ -98,12 +107,23 @@ class Belt {
      * Run a method and return the output
      *
      * @param  string $name
-     * @param  array  $arguments
+     * @param  array $arguments
+     * @throws \BadMethodCallException
      * @return mixed
      */
     public function run($name, array $arguments = array())
     {
+        foreach ($this->getModules() as $module)
+        {
+            $instance = $this->getInstance($module);
 
+            if ($this->hasMethod($instance, $name))
+            {
+                return \call_user_func_array([$instance, $name], $arguments);
+            }
+        }
+
+        throw new \BadMethodCallException("Method {$name} does not exist");
     }
 
     /**
