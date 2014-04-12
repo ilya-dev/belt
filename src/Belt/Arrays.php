@@ -153,5 +153,17 @@ class Arrays extends Toolset {
         return \array_values($elements);
     }
 
+    /**
+     * Merge two arrays
+     *
+     * @param  array $one
+     * @param  array $another
+     * @return array
+     */
+    public function zip(array $one, array $another)
+    {
+        return \array_merge($one, $another);
+    }
+
 }
 

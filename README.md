@@ -33,7 +33,7 @@ A handful of tools for PHP devs
   + unique [done]
   + union
   + difference [done]
-  + zip
+  + zip [done]
   + intersection
   + range [done]
   + indexOf

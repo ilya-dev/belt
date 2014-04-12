@@ -101,5 +101,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->without($elements, $ignore)->shouldBe(['foo', 'bar', 'doge']);
     }
 
+    function it_can_merge_two_arrays()
+    {
+        $one = [2, 3, 4, 5, 6];
+
+        $another = [1, 7, 8, 9];
+
+        $this->zip($one, $another)->shouldBe([2, 3, 4, 5, 6, 1, 7, 8, 9]);
+    }
+
 }
 
