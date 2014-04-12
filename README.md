@@ -44,7 +44,7 @@ A handful of tools for PHP devs
   + after [done]
   + compose [done]
 + Objects [in progress]
-  + keys
+  + keys [done]
   + values
   + copy [done]
   + extend [done]

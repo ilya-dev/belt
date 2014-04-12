@@ -3,6 +3,17 @@
 class Objects extends Toolset {
 
     /**
+     * Get the keys
+     *
+     * @param  mixed $object
+     * @return mixed
+     */
+    public function keys($object)
+    {
+        return \array_keys((array) $object);
+    }
+
+    /**
      * Copy all properties from $source to $destination
      *
      * @param  mixed $source
