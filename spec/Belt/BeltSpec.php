@@ -35,5 +35,29 @@ class BeltSpec extends ObjectBehavior {
         $this->isLoaded('foo')->shouldBe(true);
     }
 
+    function it_loads_an_instance_and_returns_it()
+    {
+        $this->load('foo', new \stdClass);
+
+        $this->getInstance('foo')->shouldHaveType('stdClass');
+
+        $this->shouldThrow('UnexpectedValueException')->duringGetInstance('bar');
+    }
+
+    function it_determines_whether_the_object_has_the_method()
+    {
+        $instance = new DummyMethods2;
+
+        $this->hasMethod($instance, 'foo')->shouldBe(true);
+
+        $this->hasMethod($instance, 'bar')->shouldBe(false);
+    }
+
+}
+
+class DummyMethods2 {
+
+    public function foo() {}
+
 }
 

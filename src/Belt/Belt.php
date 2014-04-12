@@ -67,6 +67,34 @@ class Belt {
     }
 
     /**
+     * Load a module (if not yet) and return the instance
+     *
+     * @param  string $module
+     * @return mixed
+     */
+    public function getInstance($module)
+    {
+        if ( ! $this->isLoaded($module))
+        {
+            $this->load($module);
+        }
+
+        return $this->instances[$module];
+    }
+
+    /**
+     * Determine whether the object has the method
+     *
+     * @param  mixed   $object
+     * @param  string  $method
+     * @return boolean
+     */
+    public function hasMethod($object, $method)
+    {
+        return (new \ReflectionClass($object))->hasMethod($method);
+    }
+
+    /**
      * Run a method and return the output
      *
      * @param  string $name
