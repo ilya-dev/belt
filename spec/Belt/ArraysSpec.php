@@ -78,5 +78,19 @@ class ArraysSpec extends ObjectBehavior {
         $this->difference($one, $another)->shouldBe([2, 4]);
     }
 
+    function it_can_remove_duplicated_values()
+    {
+        $elements = [1, 2, 3, 3, 4, 5, 5, 6, 1];
+
+        $this->unique($elements)->shouldBe([1, 2, 3, 4, 5, 6]);
+
+        $iterator = function($value)
+        {
+            return \in_array($value, [1, 3, 5], true);
+        };
+
+        $this->unique($elements, $iterator)->shouldBe([1, 3, 3, 5, 5, 1]);
+    }
+
 }
 

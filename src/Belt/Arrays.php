@@ -115,5 +115,26 @@ class Arrays extends Toolset {
         return \array_values(\array_diff($one, $another));
     }
 
+    /**
+     * Remove duplicated values
+     *
+     * @param  array         $elements
+     * @param  \Closure|null $iterator
+     * @return array
+     */
+    public function unique(array $elements, \Closure $iterator = null)
+    {
+        if ( ! is_null($iterator))
+        {
+            $elements = \array_filter($elements, $iterator);
+        }
+        else
+        {
+            $elements = \array_unique($elements);
+        }
+
+        return \array_values($elements);
+    }
+
 }
 

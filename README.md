@@ -30,7 +30,7 @@ A handful of tools for PHP devs
   + pack [done]
   + flatten [done]
   + without
-  + unique
+  + unique [done]
   + union
   + difference [done]
   + zip
