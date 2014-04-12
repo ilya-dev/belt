@@ -35,7 +35,7 @@ A handful of tools for PHP devs
   + difference
   + zip
   + intersection
-  + range
+  + range [done]
   + indexOf
 + Functions [done]
   + cache [done] 

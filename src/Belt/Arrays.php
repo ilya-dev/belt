@@ -90,5 +90,18 @@ class Arrays extends Toolset {
         return $level;
     }
 
+    /**
+     * Create an array containing a range of elements
+     *
+     * @param  int $to
+     * @param  int $from
+     * @param  int $step
+     * @return array
+     */
+    public function range($to, $from = 0, $step = 1)
+    {
+        return \range($from, $to, $step);
+    }
+
 }
 

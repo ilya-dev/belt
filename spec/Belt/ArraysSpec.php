@@ -60,5 +60,14 @@ class ArraysSpec extends ObjectBehavior {
         $this->flatten($elements)->shouldBe(['such', 'wow', 'amaze']);
     }
 
+    function it_can_create_an_array_containing_a_range_of_elements()
+    {
+        $this->range(3)->shouldBe([0, 1, 2, 3]);
+
+        $this->range(3, 1)->shouldBe([1, 2, 3]);
+
+        $this->range(5, 1, 2)->shouldBe([1, 3, 5]);
+    }
+
 }
 
