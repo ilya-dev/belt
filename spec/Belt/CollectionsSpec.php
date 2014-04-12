@@ -185,6 +185,21 @@ class CollectionsSpec extends ObjectBehavior {
         $this->sortBy($collection, $iterator)->shouldBe([-7, -6, -5, -4, -3, -2]);
     }
 
+    function it_can_group_values_by_their_return_value()
+    {
+        $collection = [1, 2, 3, 4, 5];
+
+        $iterator = function($value)
+        {
+            return 1 == ($value % 2);
+        };
+
+        $this->groupBy($collection, $iterator)->shouldBe([
+            0 => [2, 4],
+            1 => [1, 3, 5],
+        ]);
+    }
+
 }
 
 class DummyCountable implements \Countable {

@@ -13,7 +13,7 @@ A handful of tools for PHP devs
   + min
   + size [node]
   + toArray [done]
-  + groupBy
+  + groupBy [done]
   + sortBy [done]
   + shuffle [done]
   + all [done]

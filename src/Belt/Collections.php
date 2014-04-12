@@ -224,5 +224,26 @@ class Collections extends Toolset {
         return \array_values($collection);
     }
 
+    /**
+     * Group values by their return value
+     *
+     * @param  array    $collection
+     * @param  \Closure $iterator
+     * @return array
+     */
+    public function groupBy(array $collection, \Closure $iterator)
+    {
+        $groups = [];
+
+        foreach ($collection as $node)
+        {
+            $groups[$iterator($node)][] = $node;
+        }
+
+        \sort($groups);
+
+        return $groups;
+    }
+
 }
 
