@@ -3,11 +3,34 @@
 class Belt {
 
     /**
-     * The loaded modules
+     * The modules you want to use
      *
      * @var array
      */
-    protected $modules = [];
+    protected $modules = [
+        'Belt\Arrays',
+        'Belt\Collections',
+        'Belt\Objects',
+        'Belt\Funcs',
+        'Belt\Utils',
+    ];
+
+    /**
+     * The loaded module instances
+     *
+     * @var array
+     */
+    protected $instances = [];
+
+    /**
+     * Get the list of the modules
+     *
+     * @return array
+     */
+    public function getModules()
+    {
+        return $this->modules;
+    }
 
     /**
      * Run a method and return the output

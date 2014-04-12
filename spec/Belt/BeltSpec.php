@@ -10,7 +10,12 @@ class BeltSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Belt');
     }
 
+    function it_returns_the_list_of_the_modules()
+    {
+        $this->getModules()->shouldBeArray();
 
+        $this->getModules()->shouldHaveCount(5);
+    }
 
 }
 
