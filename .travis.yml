@@ -1,0 +1,15 @@
+notifications:
+  email: false
+
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+
+script: "vendor/bin/phpspec run"
+
+before_script:
+  - "composer install --dev --prefer-source --no-interaction"
