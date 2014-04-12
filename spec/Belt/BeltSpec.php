@@ -3,6 +3,8 @@
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
+use Belt\Belt;
+
 class BeltSpec extends ObjectBehavior {
 
     function it_is_initializable()
@@ -67,6 +69,14 @@ class BeltSpec extends ObjectBehavior {
         $this->addModule('foobar');
 
         $this->hasModule('foobar')->shouldBe(true);
+    }
+
+    function it_provides_you_some_syntactic_sugar()
+    {
+        $arguments = [new DummyMethods2];
+
+        $this->run('methods', $arguments)
+             ->shouldBeEqualTo(Belt::methods($arguments[0]));
     }
 
 }
