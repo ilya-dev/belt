@@ -1,11 +1,11 @@
-# Belt [beta]
+# Belt
 
 [![Build Status](https://travis-ci.org/ilya-dev/belt.svg?branch=master)](https://travis-ci.org/ilya-dev/belt)
 
 A handful of tools for PHP developers
 
 In case you want to try it out:
-`composer require ilya/belt:0.1.0`
+`composer require ilya/belt:1.0.0`
 
 ## What It Offers
 
