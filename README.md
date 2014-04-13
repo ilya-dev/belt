@@ -15,7 +15,28 @@ In case you want to try it out now:
 + fully tested
 + source code is clean and documented
 
-[more documentation will be here]
+Here is what is available to you:
+
++ `boolean isDate(mixed $value)`
++ `boolean isNumber(mixed $value)`
++ `boolean isString(mixed $value)`
++ `boolean isNumber(mixed $value)`
++ `boolean isFunction(mixed $value)`
++ `boolean isEmpty(mixed $value)`
++ `boolean isEqual(mixed $left, mixed $right)`
++ `boolean isBoolean(mixed $value)`
++ `boolean isObject(mixed $value)`
++ `boolean isArray(mixed $value)`
++ `boolean isTraversable(mixed $value)`
++ `boolean isNull(mixed $value)`
++ `boolean has(mixed $object, string $key)`
++ `array keys(mixed $object)`
++ `array values(mixed $object)`
++ `array methods(mixed $object)`
++ `mixed copy(mixed $value)`
++ `mixed extend(mixed $source, mixed $destination)`
++ `mixed tap(mixed $object, Closure $closure)`
++ `mixed defaults(mixed $object, array|mixed $defaults)`
 
 ## Development
 
