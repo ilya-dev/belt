@@ -37,6 +37,10 @@ Here is what is available to you:
 + `mixed extend(mixed $source, mixed $destination)`
 + `mixed tap(mixed $object, Closure $closure)`
 + `mixed defaults(mixed $object, array|mixed $defaults)`
++ `string escape(string $string)`
++ `string id(string $prefix = '')`
++ `mixed with(mixed $value)`
++ `void times(integer $number, Closure $closure)`
 
 ## Development
 
