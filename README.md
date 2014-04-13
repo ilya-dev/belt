@@ -7,6 +7,18 @@ A handful of tools for PHP developers
 In case you want to try it out:
 `composer require ilya/belt:1.0.0`
 
+A little taste of Belt:
+
+```php
+
+Belt::max([1, 2, 3]) // => 3
+
+Belt::flatten([1, [2, [3]]]) // => [1, 2, 3]
+
+Belt::last([1, 2, 3], 2) // => [2, 3]
+
+```
+
 ## What It Offers
 
 + **60+** useful functions
