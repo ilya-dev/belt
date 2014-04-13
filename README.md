@@ -46,6 +46,20 @@ Here is what is available to you:
 + `mixed compose(array $closures, array $arguments = array())`
 + `void once(Closure $closure)`
 + `mixed after(integer $number, Closure $closure)`
++ `mixed|array first(array $elements, integer $amount = 1)`
++ `array initial(array $elements, integer $amount = 1)`
++ `array rest(array $elements, integer $index = 1)`
++ `mixed|array last(array $elements, integer $amount = 1)`
++ `array pack(array $elements)`
++ `array flatten(array $elements)`
++ `array range(integer $to, integer $from = 0, integer $step = 1)`
++ `array difference(array $one, array $another)`
++ `array unique(array $elements, Closure $iterator = null)`
++ `array without(array $elements, array $ignore)`
++ `array zip(array $one, array $another)`
++ `integer indexOf(array $elements, mixed $element)`
++ `array intersection(array $one, array $another)`
++ `array union(array $one, array $another)`
 
 ## Development
 
