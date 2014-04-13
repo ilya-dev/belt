@@ -16,5 +16,8 @@
         "psr-4": {
             "Belt\\": "src/Belt/"
         }
+    },
+    "require": {
+        "php": ">=5.4.0"
     }
 }
