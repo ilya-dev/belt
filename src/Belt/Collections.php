@@ -170,12 +170,7 @@ class Collections extends Toolset {
      */
     public function contains(array $collection, $value)
     {
-        foreach ($collection as $node)
-        {
-            if (($node) === $value) return true;
-        }
-
-        return false;
+        return \in_array($value, $collection, true);
     }
 
     /**
