@@ -41,6 +41,11 @@ Here is what is available to you:
 + `string id(string $prefix = '')`
 + `mixed with(mixed $value)`
 + `void times(integer $number, Closure $closure)`
++ `mixed cache(Closure $closure)`
++ `mixed wrap(Closure $closure, Closure $wrapper)`
++ `mixed compose(array $closures, array $arguments = array())`
++ `void once(Closure $closure)`
++ `mixed after(integer $number, Closure $closure)`
 
 ## Development
 
