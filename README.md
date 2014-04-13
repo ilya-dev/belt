@@ -4,13 +4,12 @@
 
 A handful of tools for PHP developers
 
-In case you want to try it out now:
+In case you want to try it out:
 `composer require ilya/belt:0.1.0`
 
 ## What It Offers
 
 + **60+** useful functions
-+ support for chaining
 + ability to use the facade `Belt` or a dedicated component (e.g. `Belt\Utilities`)
 + fully tested
 + source code is clean and documented
@@ -83,6 +82,7 @@ Here is what is available to you:
 ### Plans
 
 + add support for `PHP 5.6` - leverage *arguments unpacking* and *variadic functions*
++ some refactoring is in order
 
 ### Features
 
@@ -150,4 +150,8 @@ Here is what is available to you:
   + times [done]
   + id [done]
   + escape [done]
+
+## License
+
+Belt is licensed under the MIT license.
 
