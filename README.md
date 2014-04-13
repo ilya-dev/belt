@@ -60,6 +60,23 @@ Here is what is available to you:
 + `integer indexOf(array $elements, mixed $element)`
 + `array intersection(array $one, array $another)`
 + `array union(array $one, array $another)`
++ `void each(array $collection, Closure $iterator)`
++ `array map(array $collection, Closure $iterator)`
++ `array toArray(mixed $value)`
++ `integer|null size(array|Countable $value)`
++ `array shuffle(array $collection)`
++ `boolean any(array $collection, Closure $iterator)`
++ `boolean all(array $collection, Closure $iterator)`
++ `array reject(array $collection, Closure $iterator)`
++ `array filter(array $collection, Closure $iterator)`
++ `array pluck(array $collection, string $key)`
++ `boolean contains(array $collection, mixed $value)`
++ `array invoke(array $collection, string $function)`
++ `mixed reduce(array $collection, Closure $iterator, mixed $initial = 0)`
++ `array sortBy(array $collection, Closure $iterator)`
++ `array groupBy(array $collection, Closure $iterator)`
++ `mixed max(array $collection)`
++ `mixed min(array $collection)`
 
 ## Development
 
