@@ -6,10 +6,12 @@ A handful of tools for PHP developers.
 
 ## Installation
 
-In case you want to try it out:
+In case you want to try it out, run:
 
 
-`composer require ilya/belt:1.0.0`
+`php composer.phar require "ilya/belt:1.*"`
+
+That will add Belt to your project as a Composer dependency.
 
 ## Example
 
@@ -27,10 +29,9 @@ Belt::last([1, 2, 3], 2) // => [2, 3]
 
 ## What It Offers
 
-+ **60+** useful functions
-+ ability to use the facade `Belt` or a dedicated component (e.g. `Belt\Utilities`)
-+ fully tested
-+ source code is clean and documented
++ **60+** useful functions that you can use in your projects.
++ Belt is fully tested.
++ The source code is clean and documented.
 
 Here is what is available to you:
 
@@ -99,8 +100,7 @@ Here is what is available to you:
 
 ### Plans
 
-+ add support for `PHP 5.6` - leverage *arguments unpacking* and *variadic functions*
-+ some refactoring is in order
++ Add `PHP 5.6` support - leverage **variadic functions**.
 
 ### Features
 
