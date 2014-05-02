@@ -3,10 +3,10 @@
 class Arrays {
 
     /**
-     * Get the first n elements
+     * Get the first n elements.
      *
-     * @param  array   $elements
-     * @param  integer $amount
+     * @param array $elements
+     * @param integer $amount
      * @return mixed|array
      */
     public function first(array $elements, $amount = 1)
@@ -17,10 +17,10 @@ class Arrays {
     }
 
     /**
-     * Exclude the last n elements
+     * Exclude the last n elements.
      *
-     * @param  array   $elements
-     * @param  integer $amount
+     * @param array $elements
+     * @param integer $amount
      * @return array
      */
     public function initial(array $elements, $amount = 1)
@@ -29,10 +29,10 @@ class Arrays {
     }
 
     /**
-     * Get the rest of the array elements
+     * Get the rest of the elements.
      *
-     * @param  array   $elements
-     * @param  integer $index
+     * @param array $elements
+     * @param integer $index
      * @return array
      */
     public function rest(array $elements, $index = 1)
@@ -41,10 +41,10 @@ class Arrays {
     }
 
     /**
-     * Get the last n elements
+     * Get the last n elements.
      *
-     * @param  array   $elements
-     * @param  integer $amount
+     * @param array $elements
+     * @param integer $amount
      * @return mixed|array
      */
     public function last(array $elements, $amount = 1)
@@ -55,9 +55,9 @@ class Arrays {
     }
 
     /**
-     * Remove falsy values
+     * Remove falsy values.
      *
-     * @param  array $elements
+     * @param array $elements
      * @return array
      */
     public function pack(array $elements)
@@ -66,9 +66,9 @@ class Arrays {
     }
 
     /**
-     * "Flatten" an array
+     * "Flatten" an array.
      *
-     * @param  array $elements
+     * @param array $elements
      * @return array
      */
     public function flatten(array $elements)
@@ -91,11 +91,11 @@ class Arrays {
     }
 
     /**
-     * Create an array containing a range of elements
+     * Create an array containing a range of elements.
      *
-     * @param  int $to
-     * @param  int $from
-     * @param  int $step
+     * @param integer $to
+     * @param integer $from
+     * @param integer $step
      * @return array
      */
     public function range($to, $from = 0, $step = 1)
@@ -104,10 +104,10 @@ class Arrays {
     }
 
     /**
-     * Compute the difference between the two
+     * Compute the difference between the two.
      *
-     * @param  array $one
-     * @param  array $another
+     * @param array $one
+     * @param array $another
      * @return array
      */
     public function difference(array $one, array $another)
@@ -116,10 +116,10 @@ class Arrays {
     }
 
     /**
-     * Remove duplicated values
+     * Remove duplicated values.
      *
-     * @param  array         $elements
-     * @param  \Closure|null $iterator
+     * @param array $elements
+     * @param \Closure|null $iterator
      * @return array
      */
     public function unique(array $elements, \Closure $iterator = null)
@@ -137,10 +137,10 @@ class Arrays {
     }
 
     /**
-     * Remove all instances of $ignore found in $elements (=== used)
+     * Remove all instances of $ignore found in $elements (=== is used).
      *
-     * @param  array $elements
-     * @param  array $ignore
+     * @param array $elements
+     * @param array $ignore
      * @return array
      */
     public function without(array $elements, array $ignore)
@@ -154,10 +154,10 @@ class Arrays {
     }
 
     /**
-     * Merge two arrays
+     * Merge two arrays.
      *
-     * @param  array $one
-     * @param  array $another
+     * @param array $one
+     * @param array $another
      * @return array
      */
     public function zip(array $one, array $another)
@@ -166,10 +166,10 @@ class Arrays {
     }
 
     /**
-     * Get the index of the first match
+     * Get the index of the first match.
      *
-     * @param  array $elements
-     * @param  mixed $element
+     * @param array $elements
+     * @param mixed $element
      * @return integer
      */
     public function indexOf(array $elements, $element)
@@ -178,10 +178,10 @@ class Arrays {
     }
 
     /**
-     * Return the intersection of two arrays
+     * Return the intersection of two arrays.
      *
-     * @param  array $one
-     * @param  array $another
+     * @param array $one
+     * @param array $another
      * @return array
      */
     public function intersection(array $one, array $another)
@@ -190,10 +190,10 @@ class Arrays {
     }
 
     /**
-     * Returns an array containing the unique items
+     * Returns an array containing the unique items in both arrays.
      *
-     * @param  array $one
-     * @param  array $another
+     * @param array $one
+     * @param array $another
      * @return array
      */
     public function union(array $one, array $another)
