@@ -9,26 +9,26 @@ class UtilitiesSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Utilities');
     }
 
-    function it_can_generate_a_unique_indentifier()
+    function it_generates_a_unique_identifier()
     {
         $this->id()->shouldBeString();
 
         $this->id($prefix = 'foo_')->shouldContain($prefix);
     }
 
-    function it_can_escape_all_html_entities_in_a_string()
+    function it_escapes_all_html_entities_in_a_string()
     {
         $string = '<something/>';
 
         $this->escape($string)->shouldBe('&lt;something/&gt;');
     }
 
-    function it_can_return_the_value_you_pass_as_the_argument()
+    function it_returns_the_value_you_pass_as_the_first_argument()
     {
         $this->with($instance = new \stdClass)->shouldBeEqualTo($instance);
     }
 
-    function it_can_invoke_a_closure_given_number_of_times()
+    function it_invokes_the_closure_a_number_of_times()
     {
         $var = 0;
 
