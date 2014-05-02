@@ -24,9 +24,9 @@ class Functions {
     protected $delayed = [];
 
     /**
-     * Execute a closure and cache its output
+     * Execute $closure and cache its output.
      *
-     * @param  \Closure $closure
+     * @param \Closure $closure
      * @return mixed
      */
     public function cache(\Closure $closure)
@@ -42,10 +42,10 @@ class Functions {
     }
 
     /**
-     * Wrap a closure inside another closure
+     * Wrap $closure inside $wrapper.
      *
-     * @param  \Closure $closure
-     * @param  \Closure $wrapper
+     * @param \Closure $closure
+     * @param \Closure $wrapper
      * @return mixed
      */
     public function wrap(\Closure $closure, \Closure $wrapper)
@@ -54,13 +54,13 @@ class Functions {
     }
 
     /**
-     * Compose given set of closures
+     * Compose the given set of closures.
      *
-     * @param  array $closures
-     * @param  array $arguments
+     * @param array $closures
+     * @param array $arguments
      * @return mixed
      */
-    public function compose(array $closures, array $arguments = array())
+    public function compose(array $closures, array $arguments = [])
     {
         $result = \call_user_func_array(\array_shift($closures), $arguments);
 
@@ -73,9 +73,9 @@ class Functions {
     }
 
     /**
-     * Call a closure only once and ignore next calls
+     * Execute $closure only once and ignore future calls.
      *
-     * @param  \Closure $closure
+     * @param \Closure $closure
      * @return void
      */
     public function once(\Closure $closure)
@@ -91,10 +91,10 @@ class Functions {
     }
 
     /**
-     * Only call a closure after the exact number of tries
+     * Only execute $closure after the exact $number of failed tries.
      *
-     * @param  integer  $number
-     * @param  \Closure $closure
+     * @param integer $number
+     * @param \Closure $closure
      * @return mixed
      */
     public function after($number, \Closure $closure)
