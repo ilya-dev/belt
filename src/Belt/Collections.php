@@ -3,10 +3,10 @@
 class Collections {
 
     /**
-     * Iterate through a collection
+     * Iterate through $collection using $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return void
      */
     public function each(array $collection, \Closure $iterator)
@@ -18,10 +18,10 @@ class Collections {
     }
 
     /**
-     * "Map" through a collection
+     * "Map" through $collection using $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return array
      */
     public function map(array $collection, \Closure $iterator)
@@ -35,9 +35,9 @@ class Collections {
     }
 
     /**
-     * Convert a value to an array
+     * Convert $value to an array.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return array
      */
     public function toArray($value)
@@ -46,9 +46,9 @@ class Collections {
     }
 
     /**
-     * Get the "size" of a given value
+     * Calculate the size of $value.
      *
-     * @param  array|\Countable $value
+     * @param array|\Countable $value
      * @return null|integer
      */
     public function size($value)
@@ -62,9 +62,9 @@ class Collections {
     }
 
     /**
-     * "Shuffle" an array
+     * "Shuffle" the given $collection.
      *
-     * @param  array $collection
+     * @param array $collection
      * @return array
      */
     public function shuffle(array $collection)
@@ -75,10 +75,10 @@ class Collections {
     }
 
     /**
-     * Whether any values in the $collection pass the $iterator
+     * Check whether any values in $collection pass $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return boolean
      */
     public function any(array $collection, \Closure $iterator)
@@ -95,10 +95,10 @@ class Collections {
     }
 
     /**
-     * Whether all values in $collection pass the truth test ($iterator)
+     * Check whether all values in $collection pass $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return boolean
      */
     public function all(array $collection, \Closure $iterator)
@@ -112,10 +112,10 @@ class Collections {
     }
 
     /**
-     * Run $iterator and remove all failing items in $collection
+     * Run $iterator and remove all failing items in $collection.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return array
      */
     public function reject(array $collection, \Closure $iterator)
@@ -129,10 +129,10 @@ class Collections {
     }
 
     /**
-     * Remove items that do not pass the truth test ($iterator)
+     * Remove items in $collection that don't pass $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return array
      */
     public function filter(array $collection, \Closure $iterator)
@@ -141,10 +141,10 @@ class Collections {
     }
 
     /**
-     * Extract an array of values associated with the $key
+     * Extract an array of values associated with $key from $collection.
      *
-     * @param  array  $collection
-     * @param  string $key
+     * @param array $collection
+     * @param string $key
      * @return array
      */
     public function pluck(array $collection, $key)
@@ -162,10 +162,10 @@ class Collections {
     }
 
     /**
-     * Determine if the collection contains a given value (strict check)
+     * Determine if $collection contains $value (=== is used).
      *
-     * @param  array $collection
-     * @param  mixed $value
+     * @param array $collection
+     * @param mixed $value
      * @return boolean
      */
     public function contains(array $collection, $value)
@@ -174,10 +174,10 @@ class Collections {
     }
 
     /**
-     * Run $function across all elements in $collection
+     * Run $function across all elements in $collection.
      *
-     * @param  array  $collection
-     * @param  string $function
+     * @param array $collection
+     * @param string $function
      * @return array
      */
     public function invoke(array $collection, $function)
@@ -186,11 +186,11 @@ class Collections {
     }
 
     /**
-     * Reduce the collection into a single value
+     * Reduce $collection into a single value using $iterator.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
-     * @param  mixed    $initial
+     * @param array $collection
+     * @param \Closure $iterator
+     * @param mixed $initial
      * @return mixed
      */
     public function reduce(array $collection, \Closure $iterator, $initial = 0)
@@ -204,10 +204,10 @@ class Collections {
     }
 
     /**
-     * Returns $collection sorted in ascending order based on $iterator results
+     * Return $collection sorted in ascending order based on $iterator results.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return array
      */
     public function sortBy(array $collection, \Closure $iterator)
@@ -220,10 +220,10 @@ class Collections {
     }
 
     /**
-     * Group values by their return value
+     * Group values in $collection by $iterator's return value.
      *
-     * @param  array    $collection
-     * @param  \Closure $iterator
+     * @param array $collection
+     * @param \Closure $iterator
      * @return array
      */
     public function groupBy(array $collection, \Closure $iterator)
@@ -241,9 +241,9 @@ class Collections {
     }
 
     /**
-     * Return the maximum value from the collection
+     * Return the maximum value from $collection.
      *
-     * @param  array $collection
+     * @param array $collection
      * @return mixed
      */
     public function max(array $collection)
@@ -254,9 +254,9 @@ class Collections {
     }
 
     /**
-     * Return the minimum value from the collection
+     * Return the minimum value from $collection.
      *
-     * @param  array $collection
+     * @param array $collection
      * @return mixed
      */
     public function min(array $collection)
