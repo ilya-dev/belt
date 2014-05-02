@@ -9,7 +9,7 @@ A handful of tools for PHP developers.
 In case you want to try it out, run:
 
 
-`php composer.phar require "ilya/belt:1.*"`
+`php composer.phar require "ilya/belt:~1"`
 
 That will add Belt to your project as a Composer dependency.
 
