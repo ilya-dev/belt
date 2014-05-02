@@ -9,7 +9,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Collections');
     }
 
-    function it_can_transform_a_value_to_an_array()
+    function it_transforms_the_collection_to_an_array()
     {
         $this->toArray(['foo'])->shouldBe(['foo']);
 
@@ -34,7 +34,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->any([67, 45], $iterator)->shouldReturn(false);
     }
 
-    function it_can_extract_an_array_of_values_associated_with_a_given_key()
+    function it_extracts_an_array_of_values_associated_with_the_key()
     {
         $collection = [
             ['name' => 'Jack'], ['name' => 'Ian'], ['name' => 'Glen'],
@@ -42,12 +42,12 @@ class CollectionsSpec extends ObjectBehavior {
 
         $this->pluck($collection, 'name')->shouldBe(['Jack', 'Ian', 'Glen']);
 
-        $collection[1] = []; // break the structure
+        $collection[1] = [];
 
         $this->pluck($collection, 'name')->shouldBe(['Jack', 'Glen']);
     }
 
-    function it_can_iterate_through_a_collection()
+    function it_iterates_through_a_collection()
     {
         $collection = [
             'foo', 'bar', 'baz'
@@ -64,7 +64,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->each($collection, $iterator);
     }
 
-    function it_can_calculate_the_size_of_a_value()
+    function it_calculates_the_size_of_value()
     {
         $this->size([1, 2, 3])->shouldBe(3);
 
@@ -73,14 +73,14 @@ class CollectionsSpec extends ObjectBehavior {
         $this->size(new DummyCountable)->shouldBe(4);
     }
 
-    function it_can_shuffle_an_array()
+    function it_shuffles_a_collection()
     {
         $collection = [15, 52, 47, 74, 27, 95, 32, 82];
 
         $this->shuffle($collection)->shouldNotBe($collection);
     }
 
-    function it_can_map_through_an_array()
+    function it_maps_through_a_collection()
     {
         $collection = [
             'foo' => 'bar',
@@ -98,7 +98,7 @@ class CollectionsSpec extends ObjectBehavior {
         ]);
     }
 
-    function it_can_determine_whether_a_collection_contains_a_value()
+    function it_determines_whether_the_collection_contains_a_value()
     {
         $collection = ['foo', false, 42];
 
@@ -107,16 +107,16 @@ class CollectionsSpec extends ObjectBehavior {
         $this->contains($collection, false)->shouldBe(true);
     }
 
-    function it_can_run_a_function_across_all_elements_in_a_collection()
+    function it_runs_a_function_across_all_elements_in_the_collection()
     {
         $collection = [
             '  foo  ', '  bar', 'baz  '
         ];
 
-        $this->invoke($collection, '\\trim')->shouldBe(['foo', 'bar', 'baz']);
+        $this->invoke($collection, 'trim')->shouldBe(['foo', 'bar', 'baz']);
     }
 
-    function it_can_determine_whether_all_elements_in_a_collection_pass_a_test()
+    function it_determines_whether_all_elements_in_the_collection_pass_the_truth_test()
     {
         $collection = [
             null, false, 0
@@ -134,7 +134,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->all($collection, $iterator)->shouldBe(false);
     }
 
-    function it_can_run_a_test_across_given_collection_and_remove_failing_items()
+    function it_runs_a_function_across_the_collection_and_removes_failing_items()
     {
         $collection = [
             2, 3, 4, 5, 6, 7
@@ -148,7 +148,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->reject($collection, $iterator)->shouldBe([3, 5, 7]);
     }
 
-    function it_can_reduce_the_collection_into_a_single_value()
+    function it_reduces_the_collection_into_a_single_value()
     {
         $collection = [1, 2, 3, 4];
 
@@ -160,7 +160,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->reduce($collection, $iterator, 0)->shouldBe(10);
     }
 
-    function it_can_remove_all_failing_items_from_the_collection()
+    function it_removes_all_failing_items_from_the_collection()
     {
         $collection = [1, 2, 3, 4];
 
@@ -172,7 +172,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->filter($collection, $iterator)->shouldBe([2, 4]);
     }
 
-    function it_can_sort_a_collection_in_ascending_order_based_on_iterator_results()
+    function it_sorts_the_collection_in_ascending_order_based_on_iterator_results()
     {
         $collection = [2, 3, 4, 5, 6, 7];
 
@@ -184,7 +184,7 @@ class CollectionsSpec extends ObjectBehavior {
         $this->sortBy($collection, $iterator)->shouldBe([-7, -6, -5, -4, -3, -2]);
     }
 
-    function it_can_group_values_by_their_return_value()
+    function it_groups_values_in_the_collection_by_the_iterators_return_value()
     {
         $collection = [1, 2, 3, 4, 5];
 
@@ -199,14 +199,14 @@ class CollectionsSpec extends ObjectBehavior {
         ]);
     }
 
-    function it_can_return_the_maximum_value_from_the_collection()
+    function it_returns_the_maximum_value_from_the_collection()
     {
         $collection = [2, 67, 7624, 214, 6262, 155, 62];
 
         $this->max($collection)->shouldBe(7624);
     }
 
-    function it_can_return_the_minimum_value_from_the_collection()
+    function it_returns_the_minimum_value_from_the_collection()
     {
         $collection = [67, 7624, 214, 2, 17, 6262, 155, 62];
 
