@@ -55,7 +55,7 @@ Here is what is available to you:
 + `array methods(mixed $object)`
 + `mixed copy(mixed $value)`
 + `mixed extend(mixed $source, mixed $destination)`
-+ `mixed tap(mixed $object, Closure $closure)`
++ `mixed apply(mixed $object, Closure $closure)`
 + `mixed defaults(mixed $object, array|mixed $defaults)`
 + `string escape(string $string)`
 + `string id(string $prefix = '')`
@@ -152,7 +152,7 @@ Here is what is available to you:
   + extend [done]
   + defaults [done]
   + methods [done]
-  + tap [done]
+  + apply [done]
   + has [done]
   + isEqual [done]
   + isEmpty [done]

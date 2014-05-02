@@ -14,7 +14,7 @@ class Objects {
      * @param Closure $closure
      * @return mixed
      */
-    public function tap($object, Closure $closure)
+    public function apply($object, Closure $closure)
     {
         $closure($object);
 

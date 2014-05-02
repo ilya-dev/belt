@@ -157,7 +157,7 @@ class ObjectsSpec extends ObjectBehavior {
             $object->foo = 'bar';
         };
 
-        $this->tap($object = new \stdClass, $closure)->shouldBe($object);
+        $this->apply($object = new \stdClass, $closure)->shouldBe($object);
     }
 
 }
