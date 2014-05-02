@@ -1,6 +1,6 @@
 <?php namespace Belt;
 
-class Utilities extends Toolset {
+class Utilities {
 
     /**
      * Generate a unique indentifier

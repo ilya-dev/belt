@@ -1,6 +1,6 @@
 <?php namespace Belt;
 
-class Functions extends Toolset {
+class Functions {
 
     /**
      * Cached closures

@@ -1,6 +1,6 @@
 <?php namespace Belt;
 
-class Collections extends Toolset {
+class Collections {
 
     /**
      * Iterate through a collection

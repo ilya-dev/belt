@@ -1,6 +1,6 @@
 <?php namespace Belt;
 
-class Arrays extends Toolset {
+class Arrays {
 
     /**
      * Get the first n elements

@@ -1,6 +1,6 @@
 <?php namespace Belt;
 
-class Objects extends Toolset {
+class Objects {
 
     /**
      * Invoke $closure on $object, then return $object
