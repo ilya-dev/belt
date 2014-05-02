@@ -1,5 +1,7 @@
 <?php namespace Belt;
 
+use Closure;
+
 class Utilities {
 
     /**
@@ -10,7 +12,7 @@ class Utilities {
      */
     public function id($prefix = '')
     {
-        return \uniqid($prefix, true);
+        return uniqid($prefix, true);
     }
 
     /**
@@ -21,7 +23,7 @@ class Utilities {
      */
     public function escape($string)
     {
-        return \htmlentities($string, ENT_QUOTES, 'UTF-8', false);
+        return htmlentities($string, ENT_QUOTES, 'UTF-8', false);
     }
 
     /**
@@ -39,12 +41,12 @@ class Utilities {
      * Invoke a $closure $number of times.
      *
      * @param integer $number
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return void
      */
-    public function times($number, \Closure $closure)
+    public function times($number, Closure $closure)
     {
-        foreach (\range(1, $number) as $index)
+        foreach (range(1, $number) as $index)
         {
             $closure();
         }
