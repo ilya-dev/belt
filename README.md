@@ -19,6 +19,8 @@ A little taste of Belt:
 
 ```php
 
+use Belt\Belt;
+
 Belt::max([1, 2, 3]) // => 3
 
 Belt::flatten([1, [2, [3]]]) // => [1, 2, 3]
