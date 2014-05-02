@@ -1,5 +1,7 @@
 <?php namespace Belt;
 
+use Closure;
+
 class Arrays {
 
     /**
@@ -11,9 +13,9 @@ class Arrays {
      */
     public function first(array $elements, $amount = 1)
     {
-        $elements = \array_slice($elements, 0, $amount);
+        $elements = array_slice($elements, 0, $amount);
 
-        return \count($elements) == 1 ? \reset($elements) : $elements;
+        return count($elements) == 1 ? reset($elements) : $elements;
     }
 
     /**
@@ -25,7 +27,7 @@ class Arrays {
      */
     public function initial(array $elements, $amount = 1)
     {
-        return \array_slice($elements, 0, \count($elements) - $amount);
+        return array_slice($elements, 0, count($elements) - $amount);
     }
 
     /**
@@ -37,7 +39,7 @@ class Arrays {
      */
     public function rest(array $elements, $index = 1)
     {
-        return \array_slice($elements, $index);
+        return array_slice($elements, $index);
     }
 
     /**
@@ -49,9 +51,9 @@ class Arrays {
      */
     public function last(array $elements, $amount = 1)
     {
-        $elements = \array_slice($elements, \count($elements) - $amount);
+        $elements = array_slice($elements, count($elements) - $amount);
 
-        return \count($elements) == 1 ? \reset($elements) : $elements;
+        return count($elements) == 1 ? reset($elements) : $elements;
     }
 
     /**
@@ -62,7 +64,7 @@ class Arrays {
      */
     public function pack(array $elements)
     {
-        return \array_values(\array_filter($elements));
+        return array_values(array_filter($elements));
     }
 
     /**
@@ -77,9 +79,9 @@ class Arrays {
 
         foreach ($elements as $node)
         {
-            if (\is_array($node))
+            if (is_array($node))
             {
-                $level = \array_merge($level, $this->flatten($node));
+                $level = array_merge($level, $this->flatten($node));
             }
             else
             {
@@ -100,7 +102,7 @@ class Arrays {
      */
     public function range($to, $from = 0, $step = 1)
     {
-        return \range($from, $to, $step);
+        return range($from, $to, $step);
     }
 
     /**
@@ -112,28 +114,28 @@ class Arrays {
      */
     public function difference(array $one, array $another)
     {
-        return \array_values(\array_diff($one, $another));
+        return array_values(array_diff($one, $another));
     }
 
     /**
      * Remove duplicated values.
      *
      * @param array $elements
-     * @param \Closure|null $iterator
+     * @param Closure|null $iterator
      * @return array
      */
-    public function unique(array $elements, \Closure $iterator = null)
+    public function unique(array $elements, Closure $iterator = null)
     {
         if ( ! is_null($iterator))
         {
-            $elements = \array_filter($elements, $iterator);
+            $elements = array_filter($elements, $iterator);
         }
         else
         {
-            $elements = \array_unique($elements);
+            $elements = array_unique($elements);
         }
 
-        return \array_values($elements);
+        return array_values($elements);
     }
 
     /**
@@ -147,13 +149,13 @@ class Arrays {
     {
         foreach ($elements as $key => $node)
         {
-            if (\in_array($node, $ignore))
+            if (in_array($node, $ignore))
             {
                 unset ($elements[$key]);
             }
         }
 
-        return \array_values($elements);
+        return array_values($elements);
     }
 
     /**
@@ -165,7 +167,7 @@ class Arrays {
      */
     public function zip(array $one, array $another)
     {
-        return \array_merge($one, $another);
+        return array_merge($one, $another);
     }
 
     /**
@@ -177,7 +179,7 @@ class Arrays {
      */
     public function indexOf(array $elements, $element)
     {
-        return \array_search($element, $elements, true);
+        return array_search($element, $elements, true);
     }
 
     /**
@@ -189,7 +191,7 @@ class Arrays {
      */
     public function intersection(array $one, array $another)
     {
-        return \array_values(\array_intersect($one, $another));
+        return array_values(array_intersect($one, $another));
     }
 
     /**
