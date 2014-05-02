@@ -3,10 +3,10 @@
 class Objects {
 
     /**
-     * Invoke $closure on $object, then return $object
+     * Invoke $closure on $object, then return $object.
      *
-     * @param  mixed    $object
-     * @param  \Closure $closure
+     * @param mixed $object
+     * @param \Closure $closure
      * @return mixed
      */
     public function tap($object, $closure)
@@ -17,10 +17,10 @@ class Objects {
     }
 
     /**
-     * Determine whether the object has the key
+     * Determine whether the given object has a key.
      *
-     * @param  mixed   $object
-     * @param  string  $key
+     * @param mixed $object
+     * @param string $key
      * @return boolean
      */
     public function has($object, $key)
@@ -29,9 +29,9 @@ class Objects {
     }
 
     /**
-     * Get the keys
+     * Get the keys.
      *
-     * @param  mixed $object
+     * @param mixed $object
      * @return array
      */
     public function keys($object)
@@ -40,9 +40,9 @@ class Objects {
     }
 
     /**
-     * Get the values
+     * Get the values.
      *
-     * @param  mixed $object
+     * @param mixed $object
      * @return array
      */
     public function values($object)
@@ -51,10 +51,10 @@ class Objects {
     }
 
     /**
-     * Copy all properties from $source to $destination
+     * Copy all properties from $source to $destination.
      *
-     * @param  mixed $source
-     * @param  mixed $destination
+     * @param mixed $source
+     * @param mixed $destination
      * @return mixed
      */
     public function extend($source, $destination)
@@ -68,10 +68,10 @@ class Objects {
     }
 
     /**
-     * Fill in any missing values using $defaults
+     * Fill in any missing values using $defaults.
      *
-     * @param  mixed $object
-     * @param  mixed $defaults
+     * @param mixed $object
+     * @param mixed $defaults
      * @return mixed
      */
     public function defaults($object, $defaults)
@@ -98,9 +98,9 @@ class Objects {
     }
 
     /**
-     * Return a copy of $value
+     * Return a copy of $value.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return mixed
      */
     public function copy($value)
@@ -109,27 +109,27 @@ class Objects {
     }
 
     /**
-     * Get the names of methods available to the object
+     * Get the names of all public methods.
      *
-     * @param  mixed $object
+     * @param mixed $object
      * @return array
      */
     public function methods($object)
     {
         $methods = (new \ReflectionClass($object))->getMethods(\ReflectionMethod::IS_PUBLIC);
 
-        return \array_map(function(\ReflectionMethod $method)
+        $iterator = function(\ReflectionMethod $method)
         {
-
             return $method->getName();
+        };
 
-        }, $methods);
+        return \array_map($iterator, $methods);
     }
 
     /**
-     * Determine whether the given value is null
+     * Determine whether the given value is null.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isNull($value)
@@ -138,9 +138,9 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is traversable
+     * Determine whether the given value is traversable.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isTraversable($value)
@@ -149,9 +149,9 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is an array
+     * Determine whether the given value is an array.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isArray($value)
@@ -160,20 +160,20 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is an instance of \DateTime
+     * Determine whether the given value is an instance of \DateTime.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isDate($value)
     {
-        return $value instanceof \DateTime;
+        return ($value instanceof \DateTime);
     }
 
     /**
-     * Determine whether the given value is a float or an integer
+     * Determine whether the given value is a float or an integer.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isNumber($value)
@@ -182,9 +182,9 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is boolean
+     * Determine whether the given value is a boolean.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isBoolean($value)
@@ -193,9 +193,9 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is a string
+     * Determine whether the given value is a string.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isString($value)
@@ -204,20 +204,20 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is an instance of \Closure
+     * Determine whether the given value is an instance of \Closure.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isFunction($value)
     {
-        return $value instanceof \Closure;
+        return ($value instanceof \Closure);
     }
 
     /**
-     * Determine whether the given value is an object
+     * Determine whether the given value is an object.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isObject($value)
@@ -226,10 +226,10 @@ class Objects {
     }
 
     /**
-     * Compare two values using === (strict)
+     * Compare two values using === (strict mode).
      *
-     * @param  mixed $left
-     * @param  mixed $right
+     * @param mixed $left
+     * @param mixed $right
      * @return boolean
      */
     public function isEqual($left, $right)
@@ -238,9 +238,9 @@ class Objects {
     }
 
     /**
-     * Determine whether the given value is empty
+     * Determine whether the given value is empty.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return boolean
      */
     public function isEmpty($value)
