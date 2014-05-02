@@ -1,15 +1,20 @@
 <?php namespace Belt;
 
+use Closure;
+use Traversable;
+use ReflectionClass, ReflectionMethod;
+use DateTime;
+
 class Objects {
 
     /**
      * Invoke $closure on $object, then return $object.
      *
      * @param mixed $object
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return mixed
      */
-    public function tap($object, $closure)
+    public function tap($object, Closure $closure)
     {
         $closure($object);
 
@@ -25,7 +30,7 @@ class Objects {
      */
     public function has($object, $key)
     {
-        return \in_array($key, $this->keys($object));
+        return in_array($key, $this->keys($object));
     }
 
     /**
@@ -36,7 +41,7 @@ class Objects {
      */
     public function keys($object)
     {
-        return \array_keys((array) $object);
+        return array_keys((array) $object);
     }
 
     /**
@@ -47,7 +52,7 @@ class Objects {
      */
     public function values($object)
     {
-        return \array_values((array) $object);
+        return array_values((array) $object);
     }
 
     /**
@@ -76,7 +81,7 @@ class Objects {
      */
     public function defaults($object, $defaults)
     {
-        if (\is_array($defaults))
+        if (is_array($defaults))
         {
             foreach ($defaults as $default)
             {
@@ -88,7 +93,7 @@ class Objects {
 
         foreach ($defaults as $key => $value)
         {
-            if ( ! \property_exists($object, $key))
+            if ( ! property_exists($object, $key))
             {
                 $object->{$key} = $value;
             }
@@ -105,7 +110,7 @@ class Objects {
      */
     public function copy($value)
     {
-        return \is_object($value) ? (clone $value) : $value;
+        return is_object($value) ? (clone $value) : $value;
     }
 
     /**
@@ -116,14 +121,14 @@ class Objects {
      */
     public function methods($object)
     {
-        $methods = (new \ReflectionClass($object))->getMethods(\ReflectionMethod::IS_PUBLIC);
+        $methods = (new ReflectionClass($object))->getMethods(ReflectionMethod::IS_PUBLIC);
 
-        $iterator = function(\ReflectionMethod $method)
+        $iterator = function(ReflectionMethod $method)
         {
             return $method->getName();
         };
 
-        return \array_map($iterator, $methods);
+        return array_map($iterator, $methods);
     }
 
     /**
@@ -134,7 +139,7 @@ class Objects {
      */
     public function isNull($value)
     {
-        return \is_null($value);
+        return is_null($value);
     }
 
     /**
@@ -145,7 +150,7 @@ class Objects {
      */
     public function isTraversable($value)
     {
-        return \is_array($value) or ($value instanceof \Traversable);
+        return is_array($value) or ($value instanceof Traversable);
     }
 
     /**
@@ -156,7 +161,7 @@ class Objects {
      */
     public function isArray($value)
     {
-        return \is_array($value);
+        return is_array($value);
     }
 
     /**
@@ -167,7 +172,7 @@ class Objects {
      */
     public function isDate($value)
     {
-        return ($value instanceof \DateTime);
+        return ($value instanceof DateTime);
     }
 
     /**
@@ -178,7 +183,7 @@ class Objects {
      */
     public function isNumber($value)
     {
-        return \is_integer($value) or \is_float($value);
+        return is_integer($value) or is_float($value);
     }
 
     /**
@@ -189,7 +194,7 @@ class Objects {
      */
     public function isBoolean($value)
     {
-        return \is_bool($value);
+        return is_bool($value);
     }
 
     /**
@@ -200,7 +205,7 @@ class Objects {
      */
     public function isString($value)
     {
-        return \is_string($value);
+        return is_string($value);
     }
 
     /**
@@ -211,7 +216,7 @@ class Objects {
      */
     public function isFunction($value)
     {
-        return ($value instanceof \Closure);
+        return ($value instanceof Closure);
     }
 
     /**
@@ -222,7 +227,7 @@ class Objects {
      */
     public function isObject($value)
     {
-        return \is_object($value);
+        return is_object($value);
     }
 
     /**
