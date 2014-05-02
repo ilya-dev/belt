@@ -3,39 +3,25 @@
 class Functions {
 
     /**
-     * Cached closures
+     * The cached closures.
      *
      * @var array
      */
-    protected $cached;
+    protected $cached = [];
 
     /**
-     * Called closures
+     * The called closures.
      *
      * @var array
      */
-    protected $called;
+    protected $called = [];
 
     /**
-     * "Delayed" closures
+     * The "delayed" closures.
      *
      * @var array
      */
-    protected $delayed;
-
-    /**
-     * The constructor
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->cached  = [];
-
-        $this->called  = [];
-
-        $this->delayed = [];
-    }
+    protected $delayed = [];
 
     /**
      * Execute a closure and cache its output
