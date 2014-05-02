@@ -1,8 +1,6 @@
 <?php namespace spec\Belt;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-
 use Belt\Belt;
 
 class BeltSpec extends ObjectBehavior {
