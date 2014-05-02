@@ -9,7 +9,7 @@ class FunctionsSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Functions');
     }
 
-    function it_can_cache_the_returned_value()
+    function it_saves_the_returned_value()
     {
         $closure = function()
         {
@@ -19,7 +19,7 @@ class FunctionsSpec extends ObjectBehavior {
         $this->cache($closure)->shouldBeEqualTo($this->cache($closure));
     }
 
-    function it_can_wrap_a_closure_inside_another_closure()
+    function it_wraps_the_closure_inside_another_closure()
     {
         $closure = function()
         {
@@ -34,7 +34,7 @@ class FunctionsSpec extends ObjectBehavior {
         $this->wrap($closure, $wrapper)->shouldReturn('foobar');
     }
 
-    function it_can_make_a_composition_of_an_array_of_closures()
+    function it_makes_a_composition_of_multiple_closures()
     {
         $closures = [];
 
@@ -51,7 +51,7 @@ class FunctionsSpec extends ObjectBehavior {
         $this->compose($closures, ['foo'])->shouldBe(true);
     }
 
-    function it_can_lock_a_closure_so_it_can_be_called_only_once()
+    function it_locks_the_closure_so_it_can_be_only_called_once()
     {
         $closure = function()
         {
@@ -66,7 +66,7 @@ class FunctionsSpec extends ObjectBehavior {
         $this->shouldNotThrow('LogicException')->duringOnce($closure);
     }
 
-    function it_can_make_a_closure_callable_only_after_a_number_of_tries()
+    function it_calls_the_closure_only_after_a_number_of_failed_tries()
     {
         $closure = function()
         {
