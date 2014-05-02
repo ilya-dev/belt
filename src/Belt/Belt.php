@@ -3,7 +3,7 @@
 class Belt {
 
     /**
-     * The modules you want to use
+     * The modules you want to use.
      *
      * @var array
      */
@@ -16,18 +16,18 @@ class Belt {
     ];
 
     /**
-     * The loaded module instances
+     * The loaded module instances.
      *
      * @var array
      */
     protected $instances = [];
 
     /**
-     * Load a module
+     * Load a module.
      *
-     * @param  string $module
-     * @param  mixed|null $instance
      * @throws \UnexpectedValueException
+     * @param string $module
+     * @param mixed|null $instance
      * @return mixed
      */
     public function load($module, $instance = null)
@@ -51,9 +51,9 @@ class Belt {
     }
 
     /**
-     * Determine whether the module exists
+     * Determine whether the module exists.
      *
-     * @param  string $module
+     * @param string $module
      * @return boolean
      */
     public function hasModule($module)
@@ -62,9 +62,9 @@ class Belt {
     }
 
     /**
-     * Add a new module
+     * Add a new module.
      *
-     * @param  string $module
+     * @param string $module
      * @return void
      */
     public function addModule($module)
@@ -73,7 +73,7 @@ class Belt {
     }
 
     /**
-     * Get the list of the modules
+     * Get all modules.
      *
      * @return array
      */
@@ -83,9 +83,9 @@ class Belt {
     }
 
     /**
-     * Determine whether the module was loaded
+     * Determine whether a module was loaded.
      *
-     * @param  string  $module
+     * @param string $module
      * @return boolean
      */
     public function isLoaded($module)
@@ -94,9 +94,9 @@ class Belt {
     }
 
     /**
-     * Load a module (if not yet) and return the instance
+     * Load a module (if not yet) and return its instance.
      *
-     * @param  string $module
+     * @param string $module
      * @return mixed
      */
     public function getInstance($module)
@@ -110,10 +110,10 @@ class Belt {
     }
 
     /**
-     * Determine whether the object has the method
+     * Determine whether the object has a method.
      *
-     * @param  mixed   $object
-     * @param  string  $method
+     * @param mixed $object
+     * @param string $method
      * @return boolean
      */
     public function hasMethod($object, $method)
@@ -122,14 +122,14 @@ class Belt {
     }
 
     /**
-     * Run a method and return the output
+     * Run a method and return its output.
      *
-     * @param  string $name
-     * @param  array $arguments
      * @throws \BadMethodCallException
+     * @param string $name
+     * @param array $arguments
      * @return mixed
      */
-    public function run($name, array $arguments = array())
+    public function run($name, array $arguments = [])
     {
         foreach ($this->getModules() as $module)
         {
@@ -145,10 +145,10 @@ class Belt {
     }
 
     /**
-     * Handle dynamic calls
+     * Handle a dynamic method call.
      *
-     * @param  string $method
-     * @param  array  $arguments
+     * @param string $method
+     * @param array $arguments
      * @return mixed
      */
     public function __call($method, array $arguments = array())
@@ -157,10 +157,10 @@ class Belt {
     }
 
     /**
-     * Handle dynamic static calls
+     * Handle a dynamic static call.
      *
-     * @param  string $method
-     * @param  array  $arguments
+     * @param string $method
+     * @param array $arguments
      * @return mixed
      */
     public static function __callStatic($method, array $arguments = array())
