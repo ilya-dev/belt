@@ -1,7 +1,6 @@
 <?php namespace spec\Belt;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ArraysSpec extends ObjectBehavior {
 
@@ -10,7 +9,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->shouldHaveType('Belt\Arrays');
     }
 
-    function it_can_return_the_first_n_elements()
+    function it_returns_the_first_n_elements()
     {
         $elements = [2, 3, 4, 5, 6, 7];
 
@@ -19,7 +18,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->first($elements, 3)->shouldBe([2, 3, 4]);
     }
 
-    function it_can_exclude_the_last_n_elements()
+    function it_excludes_the_last_n_elements()
     {
         $elements = [2, 3, 4, 5, 6, 7];
 
@@ -28,7 +27,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->initial($elements, 3)->shouldBe([2, 3, 4]);
     }
 
-    function it_can_return_the_rest_of_the_array_elements()
+    function it_returns_the_rest_of_the_array_elements()
     {
         $elements = [2, 3, 4, 5, 6, 7];
 
@@ -37,7 +36,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->rest($elements, 2)->shouldBe([4, 5, 6, 7]);
     }
 
-    function it_can_return_the_last_n_elements()
+    function it_returns_the_last_n_elements()
     {
         $elements = [2, 3, 4, 5, 6, 7];
 
@@ -46,21 +45,21 @@ class ArraysSpec extends ObjectBehavior {
         $this->last($elements, 3)->shouldBe([5, 6, 7]);
     }
 
-    function it_can_remove_falsy_values()
+    function it_removes_falsy_values()
     {
         $elements = [false, 'foo', 0, '', 42];
 
         $this->pack($elements)->shouldBe(['foo', 42]);
     }
 
-    function it_can_flatten_an_array()
+    function it_flattens_an_array()
     {
         $elements = ['such', ['wow', ['amaze']]];
 
         $this->flatten($elements)->shouldBe(['such', 'wow', 'amaze']);
     }
 
-    function it_can_create_an_array_containing_a_range_of_elements()
+    function it_creates_an_array_containing_a_range_of_elements()
     {
         $this->range(3)->shouldBe([0, 1, 2, 3]);
 
@@ -69,7 +68,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->range(5, 1, 2)->shouldBe([1, 3, 5]);
     }
 
-    function it_can_compute_the_difference_between_two_arrays()
+    function it_computes_the_difference_between_two_arrays()
     {
         $one = [1, 2, 3, 4, 5];
 
@@ -78,7 +77,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->difference($one, $another)->shouldBe([2, 4]);
     }
 
-    function it_can_remove_duplicated_values()
+    function it_removes_duplicated_values()
     {
         $elements = [1, 2, 3, 3, 4, 5, 5, 6, 1];
 
@@ -92,7 +91,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->unique($elements, $iterator)->shouldBe([1, 3, 3, 5, 5, 1]);
     }
 
-    function it_can_remove_all_instances_from_the_array()
+    function it_removes_all_instances_from_the_array()
     {
         $elements = ['foo', 'baz', 'bar', 'wow', 'doge'];
 
@@ -101,7 +100,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->without($elements, $ignore)->shouldBe(['foo', 'bar', 'doge']);
     }
 
-    function it_can_merge_two_arrays()
+    function it_merges_two_arrays()
     {
         $one = [2, 3, 4, 5, 6];
 
@@ -110,7 +109,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->zip($one, $another)->shouldBe([2, 3, 4, 5, 6, 1, 7, 8, 9]);
     }
 
-    function it_can_return_the_index_of_the_first_match()
+    function it_returns_the_index_of_the_first_match()
     {
         $elements = [4, 7, 8, 9, 11, 18];
 
@@ -119,7 +118,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->indexOf($elements, $element)->shouldBe(3);
     }
 
-    function it_can_compute_the_intersection_of_two_arrays()
+    function it_computes_the_intersection_of_two_arrays()
     {
         $one = [2, 3, 4, 5, 6, 7];
 
@@ -128,7 +127,7 @@ class ArraysSpec extends ObjectBehavior {
         $this->intersection($one, $another)->shouldBe([3, 5, 7]);
     }
 
-    function it_can_return_an_array_containing_the_unique_items()
+    function it_returns_an_array_containing_the_unique_items()
     {
         $one = [1, 2, 3, 4, 5];
 
