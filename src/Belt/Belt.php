@@ -110,7 +110,7 @@ class Belt {
     }
 
     /**
-     * Determine whether the object has a method.
+     * Determine whether the given object has a method.
      *
      * @param mixed $object
      * @param string $method

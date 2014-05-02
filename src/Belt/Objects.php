@@ -245,7 +245,7 @@ class Objects {
      */
     public function isEmpty($value)
     {
-        return empty($value);
+        return empty ($value);
     }
 
 }

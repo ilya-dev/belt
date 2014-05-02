@@ -47,7 +47,7 @@ class Functions {
     {
         $hash = \spl_object_hash($closure);
 
-        if ( ! isset($this->cached[$hash]))
+        if ( ! isset ($this->cached[$hash]))
         {
             $this->cached[$hash] = $closure();
         }
@@ -96,7 +96,7 @@ class Functions {
     {
         $hash = \spl_object_hash($closure);
 
-        if ( ! isset($this->called[$hash]))
+        if ( ! isset ($this->called[$hash]))
         {
             $closure();
 
@@ -115,7 +115,7 @@ class Functions {
     {
         $hash = \spl_object_hash($closure);
 
-        if (isset($this->delayed[$hash]))
+        if (isset ($this->delayed[$hash]))
         {
             $closure = $this->delayed[$hash];
 

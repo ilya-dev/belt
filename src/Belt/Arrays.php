@@ -147,7 +147,10 @@ class Arrays {
     {
         foreach ($elements as $key => $node)
         {
-            if (\in_array($node, $ignore)) unset($elements[$key]);
+            if (\in_array($node, $ignore))
+            {
+                unset ($elements[$key]);
+            }
         }
 
         return \array_values($elements);
