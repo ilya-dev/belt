@@ -138,18 +138,6 @@ class Collections {
     }
 
     /**
-     * Remove items in $collection that don't pass $iterator.
-     *
-     * @param array $collection
-     * @param Closure $iterator
-     * @return array
-     */
-    public function filter(array $collection, Closure $iterator)
-    {
-        return $this->reject($collection, $iterator);
-    }
-
-    /**
      * Extract an array of values associated with $key from $collection.
      *
      * @param array $collection

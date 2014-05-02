@@ -109,7 +109,6 @@ Here is what is available to you:
 + **Collections** [done]
   + each [done]
   + map [done]
-  + filter [done]
   + reduce [done]
   + max [done]
   + min [done]
