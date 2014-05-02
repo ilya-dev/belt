@@ -1,5 +1,7 @@
 <?php namespace Belt;
 
+use Closure;
+
 class Functions {
 
     /**
@@ -26,12 +28,12 @@ class Functions {
     /**
      * Execute $closure and cache its output.
      *
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return mixed
      */
-    public function cache(\Closure $closure)
+    public function cache(Closure $closure)
     {
-        $hash = \spl_object_hash($closure);
+        $hash = spl_object_hash($closure);
 
         if ( ! isset ($this->cached[$hash]))
         {
@@ -44,11 +46,11 @@ class Functions {
     /**
      * Wrap $closure inside $wrapper.
      *
-     * @param \Closure $closure
-     * @param \Closure $wrapper
+     * @param Closure $closure
+     * @param Closure $wrapper
      * @return mixed
      */
-    public function wrap(\Closure $closure, \Closure $wrapper)
+    public function wrap(Closure $closure, Closure $wrapper)
     {
         return $wrapper($closure);
     }
@@ -62,7 +64,7 @@ class Functions {
      */
     public function compose(array $closures, array $arguments = [])
     {
-        $result = \call_user_func_array(\array_shift($closures), $arguments);
+        $result = call_user_func_array(array_shift($closures), $arguments);
 
         foreach ($closures as $closure)
         {
@@ -75,12 +77,12 @@ class Functions {
     /**
      * Execute $closure only once and ignore future calls.
      *
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return void
      */
-    public function once(\Closure $closure)
+    public function once(Closure $closure)
     {
-        $hash = \spl_object_hash($closure);
+        $hash = spl_object_hash($closure);
 
         if ( ! isset ($this->called[$hash]))
         {
@@ -94,12 +96,12 @@ class Functions {
      * Only execute $closure after the exact $number of failed tries.
      *
      * @param integer $number
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return mixed
      */
-    public function after($number, \Closure $closure)
+    public function after($number, Closure $closure)
     {
-        $hash = \spl_object_hash($closure);
+        $hash = spl_object_hash($closure);
 
         if (isset ($this->delayed[$hash]))
         {
