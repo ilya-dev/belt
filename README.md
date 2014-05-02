@@ -4,12 +4,15 @@
 
 A handful of tools for PHP developers.
 
+
+> Version **2.0.0** is out now. Clear documentation, improved tests and code quality.
+
 ## Installation
 
 In case you want to try it out, run:
 
 
-`php composer.phar require "ilya/belt:~1"`
+`php composer.phar require "ilya/belt:~2"`
 
 That will add Belt to your project as a Composer dependency.
 
