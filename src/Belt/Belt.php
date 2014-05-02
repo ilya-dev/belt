@@ -1,5 +1,8 @@
 <?php namespace Belt;
 
+use UnexpectedValueException, BadMethodCallException;
+use ReflectionClass;
+
 class Belt {
 
     /**
@@ -25,14 +28,14 @@ class Belt {
     /**
      * Load a module.
      *
-     * @throws \UnexpectedValueException
+     * @throws UnexpectedValueException
      * @param string $module
      * @param mixed|null $instance
      * @return mixed
      */
     public function load($module, $instance = null)
     {
-        if ( ! \is_null($instance))
+        if ( ! is_null($instance))
         {
             if ( ! $this->hasModule($module))
             {
@@ -47,7 +50,7 @@ class Belt {
             return ($this->instances[$module] = new $module);
         }
 
-        throw new \UnexpectedValueException("Module {$module} does not exist");
+        throw new UnexpectedValueException("Module {$module} does not exist");
     }
 
     /**
@@ -58,7 +61,7 @@ class Belt {
      */
     public function hasModule($module)
     {
-        return \in_array($module, $this->modules);
+        return in_array($module, $this->modules);
     }
 
     /**
@@ -90,7 +93,7 @@ class Belt {
      */
     public function isLoaded($module)
     {
-        return \array_key_exists($module, $this->instances);
+        return array_key_exists($module, $this->instances);
     }
 
     /**
@@ -118,13 +121,13 @@ class Belt {
      */
     public function hasMethod($object, $method)
     {
-        return (new \ReflectionClass($object))->hasMethod($method);
+        return (new ReflectionClass($object))->hasMethod($method);
     }
 
     /**
      * Run a method and return its output.
      *
-     * @throws \BadMethodCallException
+     * @throws BadMethodCallException
      * @param string $name
      * @param array $arguments
      * @return mixed
@@ -137,11 +140,11 @@ class Belt {
 
             if ($this->hasMethod($instance, $name))
             {
-                return \call_user_func_array([$instance, $name], $arguments);
+                return call_user_func_array([$instance, $name], $arguments);
             }
         }
 
-        throw new \BadMethodCallException("Method {$name} does not exist");
+        throw new BadMethodCallException("Method {$name} does not exist");
     }
 
     /**
@@ -153,7 +156,7 @@ class Belt {
      */
     public function __call($method, array $arguments = array())
     {
-        return \call_user_func_array([$this, 'run'], [$method, $arguments]);
+        return call_user_func_array([$this, 'run'], [$method, $arguments]);
     }
 
     /**
@@ -165,7 +168,7 @@ class Belt {
      */
     public static function __callStatic($method, array $arguments = array())
     {
-        return \call_user_func_array([new static, $method], $arguments);
+        return call_user_func_array([new static, $method], $arguments);
     }
 
 }
