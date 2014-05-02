@@ -1,15 +1,18 @@
 <?php namespace Belt;
 
+use Closure;
+use Countable;
+
 class Collections {
 
     /**
      * Iterate through $collection using $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return void
      */
-    public function each(array $collection, \Closure $iterator)
+    public function each(array $collection, Closure $iterator)
     {
         foreach ($collection as $key => $node)
         {
@@ -21,10 +24,10 @@ class Collections {
      * "Map" through $collection using $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return array
      */
-    public function map(array $collection, \Closure $iterator)
+    public function map(array $collection, Closure $iterator)
     {
         foreach ($collection as $key => $node)
         {
@@ -48,14 +51,14 @@ class Collections {
     /**
      * Calculate the size of $value.
      *
-     * @param array|\Countable $value
+     * @param array|Countable $value
      * @return null|integer
      */
     public function size($value)
     {
-        if (\is_array($value) or ($value instanceof \Countable))
+        if (is_array($value) or ($value instanceof Countable))
         {
-            return \count($value);
+            return count($value);
         }
 
         return null;
@@ -69,7 +72,7 @@ class Collections {
      */
     public function shuffle(array $collection)
     {
-        \shuffle($collection);
+        shuffle($collection);
 
         return $collection;
     }
@@ -78,14 +81,14 @@ class Collections {
      * Check whether any values in $collection pass $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return boolean
      */
-    public function any(array $collection, \Closure $iterator)
+    public function any(array $collection, Closure $iterator)
     {
-        foreach ($collection as $element)
+        foreach ($collection as $node)
         {
-            if ($iterator($element))
+            if ($iterator($node))
             {
                 return true;
             }
@@ -98,14 +101,17 @@ class Collections {
      * Check whether all values in $collection pass $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return boolean
      */
-    public function all(array $collection, \Closure $iterator)
+    public function all(array $collection, Closure $iterator)
     {
         foreach ($collection as $node)
         {
-            if ( ! $iterator($node)) return false;
+            if ( ! $iterator($node))
+            {
+                return false;
+            }
         }
 
         return true;
@@ -115,27 +121,30 @@ class Collections {
      * Run $iterator and remove all failing items in $collection.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return array
      */
-    public function reject(array $collection, \Closure $iterator)
+    public function reject(array $collection, Closure $iterator)
     {
         foreach ($collection as $key => $node)
         {
-            if ( ! $iterator($node)) unset($collection[$key]);
+            if ( ! $iterator($node))
+            {
+                unset($collection[$key]);
+            }
         }
 
-        return \array_values($collection);
+        return array_values($collection);
     }
 
     /**
      * Remove items in $collection that don't pass $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return array
      */
-    public function filter(array $collection, \Closure $iterator)
+    public function filter(array $collection, Closure $iterator)
     {
         return $this->reject($collection, $iterator);
     }
@@ -153,7 +162,10 @@ class Collections {
 
         foreach ($collection as $node)
         {
-            if ( ! isset($node[$key])) continue;
+            if ( ! isset($node[$key]))
+            {
+                continue;
+            }
 
             $values[] = $node[$key];
         }
@@ -170,7 +182,7 @@ class Collections {
      */
     public function contains(array $collection, $value)
     {
-        return \in_array($value, $collection, true);
+        return in_array($value, $collection, true);
     }
 
     /**
@@ -182,18 +194,18 @@ class Collections {
      */
     public function invoke(array $collection, $function)
     {
-        return \array_map($function, $collection);
+        return array_map($function, $collection);
     }
 
     /**
      * Reduce $collection into a single value using $iterator.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @param mixed $initial
      * @return mixed
      */
-    public function reduce(array $collection, \Closure $iterator, $initial = 0)
+    public function reduce(array $collection, Closure $iterator, $initial = 0)
     {
         foreach ($collection as $node)
         {
@@ -207,26 +219,26 @@ class Collections {
      * Return $collection sorted in ascending order based on $iterator results.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return array
      */
-    public function sortBy(array $collection, \Closure $iterator)
+    public function sortBy(array $collection, Closure $iterator)
     {
-        $collection = \array_map($iterator, $collection);
+        $collection = array_map($iterator, $collection);
 
-        \sort($collection);
+        sort($collection);
 
-        return \array_values($collection);
+        return array_values($collection);
     }
 
     /**
      * Group values in $collection by $iterator's return value.
      *
      * @param array $collection
-     * @param \Closure $iterator
+     * @param Closure $iterator
      * @return array
      */
-    public function groupBy(array $collection, \Closure $iterator)
+    public function groupBy(array $collection, Closure $iterator)
     {
         $groups = [];
 
@@ -235,7 +247,7 @@ class Collections {
             $groups[$iterator($node)][] = $node;
         }
 
-        \sort($groups);
+        sort($groups);
 
         return $groups;
     }
@@ -248,9 +260,9 @@ class Collections {
      */
     public function max(array $collection)
     {
-        \sort($collection);
+        sort($collection);
 
-        return \end($collection);
+        return end($collection);
     }
 
     /**
@@ -261,9 +273,9 @@ class Collections {
      */
     public function min(array $collection)
     {
-        \sort($collection);
+        sort($collection);
 
-        return \reset($collection);
+        return reset($collection);
     }
 
 }
