@@ -91,7 +91,6 @@ Here is what is available to you:
 + `boolean any(array $collection, Closure $iterator)`
 + `boolean all(array $collection, Closure $iterator)`
 + `array reject(array $collection, Closure $iterator)`
-+ `array filter(array $collection, Closure $iterator)`
 + `array pluck(array $collection, string $key)`
 + `boolean contains(array $collection, mixed $value)`
 + `array invoke(array $collection, string $function)`
