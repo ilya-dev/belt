@@ -43,7 +43,6 @@ Here is what is available to you:
 + `boolean isDate(mixed $value)`
 + `boolean isNumber(mixed $value)`
 + `boolean isString(mixed $value)`
-+ `boolean isNumber(mixed $value)`
 + `boolean isFunction(mixed $value)`
 + `boolean isEmpty(mixed $value)`
 + `boolean isEqual(mixed $left, mixed $right)`
