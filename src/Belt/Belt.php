@@ -26,6 +26,13 @@ class Belt {
     protected $instances = [];
 
     /**
+     * Instance of Belt for static calls
+     *
+     * @var Belt
+     */
+    protected static $instance = false;
+
+    /**
      * Load a module.
      *
      * @throws UnexpectedValueException
@@ -168,7 +175,11 @@ class Belt {
      */
     public static function __callStatic($method, array $arguments = array())
     {
-        return call_user_func_array([new static, $method], $arguments);
+        if(!self::$instance)
+        {
+            self::$instance = new static;
+        }
+        return call_user_func_array([self::$instance, $method], $arguments);
     }
 
 }

@@ -33,7 +33,7 @@ class Functions {
      */
     public function cache(Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object)$closure);
 
         if ( ! isset ($this->cached[$hash]))
         {
@@ -82,7 +82,7 @@ class Functions {
      */
     public function once(Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object)$closure);
 
         if ( ! isset ($this->called[$hash]))
         {
@@ -101,7 +101,7 @@ class Functions {
      */
     public function after($number, Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object)$closure);
 
         if (isset ($this->delayed[$hash]))
         {
@@ -120,7 +120,11 @@ class Functions {
             {
                 return $closure();
             }
+
+            return null;
         };
+
+        return null;
     }
 
 }
