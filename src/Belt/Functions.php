@@ -19,7 +19,7 @@ class Functions {
     protected $called = [];
 
     /**
-     * The "delayed" closures.
+     * The delayed closures.
      *
      * @var array
      */
@@ -33,7 +33,7 @@ class Functions {
      */
     public function cache(Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object) $closure);
 
         if ( ! isset ($this->cached[$hash]))
         {
@@ -56,7 +56,7 @@ class Functions {
     }
 
     /**
-     * Compose the given set of closures.
+     * Compose $closures.
      *
      * @param array $closures
      * @param array $arguments
@@ -82,7 +82,7 @@ class Functions {
      */
     public function once(Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object) $closure);
 
         if ( ! isset ($this->called[$hash]))
         {
@@ -101,7 +101,7 @@ class Functions {
      */
     public function after($number, Closure $closure)
     {
-        $hash = spl_object_hash($closure);
+        $hash = spl_object_hash((object) $closure);
 
         if (isset ($this->delayed[$hash]))
         {
