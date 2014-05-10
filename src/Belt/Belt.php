@@ -6,6 +6,13 @@ use ReflectionClass;
 class Belt {
 
     /**
+     * The instance of Belt.
+     *
+     * @var Belt
+     */
+    protected static $instance;
+
+    /**
      * The modules you want to use.
      *
      * @var array
@@ -148,7 +155,7 @@ class Belt {
     }
 
     /**
-     * Handle a dynamic method call.
+     * Handle calls to non-existent methods.
      *
      * @param string $method
      * @param array $arguments
@@ -160,7 +167,7 @@ class Belt {
     }
 
     /**
-     * Handle a dynamic static call.
+     * Handle calls to non-existent static methods.
      *
      * @param string $method
      * @param array $arguments
@@ -168,7 +175,12 @@ class Belt {
      */
     public static function __callStatic($method, array $arguments = array())
     {
-        return call_user_func_array([new static, $method], $arguments);
+        if ( ! (self::$instance instanceof self))
+        {
+            self::$instance = new self;
+        }
+
+        return call_user_func_array([self::$instance, $method], $arguments);
     }
 
 }

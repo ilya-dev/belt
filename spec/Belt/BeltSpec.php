@@ -77,6 +77,21 @@ class BeltSpec extends ObjectBehavior {
              ->shouldBeEqualTo(Belt::methods($arguments[0]));
     }
 
+    function it_saves_itself_in_a_property_for_future_static_calls()
+    {
+        $closure = function()
+        {
+            return 'foo';
+        };
+
+        Belt::once($closure); // => foo
+
+        if (Belt::once($closure) == 'foo')
+        {
+            throw new \LogicException;
+        }
+    }
+
 }
 
 class DummyMethods2 {
