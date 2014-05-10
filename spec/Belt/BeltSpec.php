@@ -81,12 +81,10 @@ class BeltSpec extends ObjectBehavior {
     {
         $closure = function()
         {
-            return 'foo';
+            return uniqid();
         };
 
-        Belt::once($closure); // => foo
-
-        if (Belt::once($closure) == 'foo')
+        if (Belt::cache($closure) != Belt::cache($closure))
         {
             throw new \LogicException;
         }
