@@ -149,7 +149,7 @@ class Arrays {
     {
         foreach ($elements as $key => $node)
         {
-            if (in_array($node, $ignore))
+            if (in_array($node, $ignore, true))
             {
                 unset ($elements[$key]);
             }
@@ -207,4 +207,3 @@ class Arrays {
     }
 
 }
-

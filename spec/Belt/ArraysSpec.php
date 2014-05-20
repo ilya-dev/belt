@@ -93,11 +93,11 @@ class ArraysSpec extends ObjectBehavior {
 
     function it_removes_all_instances_from_the_array()
     {
-        $elements = ['foo', 'baz', 'bar', 'wow', 'doge'];
+        $elements = ['foo', 'baz', 'bar', 'wow', 'doge', 1];
 
-        $ignore = ['baz', 'wow'];
+        $ignore = ['baz', 'wow', '1'];
 
-        $this->without($elements, $ignore)->shouldBe(['foo', 'bar', 'doge']);
+        $this->without($elements, $ignore)->shouldBe(['foo', 'bar', 'doge', 1]);
     }
 
     function it_merges_two_arrays()
@@ -137,4 +137,3 @@ class ArraysSpec extends ObjectBehavior {
     }
 
 }
-
