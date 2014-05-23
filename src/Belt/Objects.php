@@ -15,7 +15,7 @@ class Objects
      * @param callable $closure
      * @return mixed
      */
-    public function apply($object, callable $closure)
+    public static function apply($object, callable $closure)
     {
         $closure($object);
 
@@ -29,9 +29,9 @@ class Objects
      * @param string $key
      * @return boolean
      */
-    public function has($object, $key)
+    public static function has($object, $key)
     {
-        return in_array($key, $this->keys($object));
+        return in_array($key, self::keys($object));
     }
 
     /**
@@ -40,7 +40,7 @@ class Objects
      * @param mixed $object
      * @return array
      */
-    public function keys($object)
+    public static function keys($object)
     {
         return array_keys((array)$object);
     }
@@ -51,7 +51,7 @@ class Objects
      * @param mixed $object
      * @return array
      */
-    public function values($object)
+    public static function values($object)
     {
         return array_values((array)$object);
     }
@@ -63,7 +63,7 @@ class Objects
      * @param mixed $destination
      * @return mixed
      */
-    public function extend($source, $destination)
+    public static function extend($source, $destination)
     {
         foreach ($source as $key => $value) {
             $destination->{$key} = $value;
@@ -79,11 +79,11 @@ class Objects
      * @param mixed $defaults
      * @return mixed
      */
-    public function defaults($object, $defaults)
+    public static function defaults($object, $defaults)
     {
         if (is_array($defaults)) {
             foreach ($defaults as $default) {
-                $this->defaults($object, $default);
+                self::defaults($object, $default);
             }
 
             return $object;
@@ -104,7 +104,7 @@ class Objects
      * @param mixed $value
      * @return mixed
      */
-    public function copy($value)
+    public static function copy($value)
     {
         return is_object($value) ? (clone $value) : $value;
     }
@@ -115,7 +115,7 @@ class Objects
      * @param mixed $object
      * @return array
      */
-    public function methods($object)
+    public static function methods($object)
     {
         $methods = (new ReflectionClass($object))->getMethods(ReflectionMethod::IS_PUBLIC);
 
@@ -132,7 +132,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isNull($value)
+    public static function isNull($value)
     {
         return is_null($value);
     }
@@ -143,7 +143,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isTraversable($value)
+    public static function isTraversable($value)
     {
         return is_array($value) or ($value instanceof Traversable);
     }
@@ -154,7 +154,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isArray($value)
+    public static function isArray($value)
     {
         return is_array($value);
     }
@@ -165,7 +165,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isDate($value)
+    public static function isDate($value)
     {
         return ($value instanceof DateTime);
     }
@@ -176,7 +176,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isNumber($value)
+    public static function isNumber($value)
     {
         return is_integer($value) or is_float($value);
     }
@@ -187,7 +187,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isBoolean($value)
+    public static function isBoolean($value)
     {
         return is_bool($value);
     }
@@ -198,7 +198,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isString($value)
+    public static function isString($value)
     {
         return is_string($value);
     }
@@ -209,7 +209,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isFunction($value)
+    public static function isFunction($value)
     {
         return is_callable($value);
     }
@@ -220,7 +220,7 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isObject($value)
+    public static function isObject($value)
     {
         return is_object($value);
     }
@@ -232,7 +232,7 @@ class Objects
      * @param mixed $right
      * @return boolean
      */
-    public function isEqual($left, $right)
+    public static function isEqual($left, $right)
     {
         return ($left) === $right;
     }
@@ -243,8 +243,8 @@ class Objects
      * @param mixed $value
      * @return boolean
      */
-    public function isEmpty($value)
+    public static function isEmpty($value)
     {
-        return empty ($value);
+        return empty($value);
     }
 }
