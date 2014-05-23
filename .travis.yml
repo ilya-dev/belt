@@ -16,3 +16,7 @@ before_script:
 script:
   - "vendor/bin/phpspec run"
   - phpunit
+
+matrix:
+  allow_failures:
+    - php: hhvm
