@@ -2,14 +2,15 @@
     "name": "ilya/belt",
     "description": "A handful of tools for PHP devs",
     "keywords": ["php", "utilities", "tools", "arrays", "collections", "objects", "functions"],
-    "require-dev": {
-        "phpspec/phpspec": "~2"
-    },
     "license": "MIT",
     "authors": [
         {
             "name": "Ilya S",
             "email": "public.ilya.s@gmail.com"
+        },
+        {
+            "name": "Gabriel Bull",
+            "email": "me@gabrielbull.com"
         }
     ],
     "autoload": {
@@ -19,5 +20,9 @@
     },
     "require": {
         "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2",
+        "phpunit/phpunit": "~4"
     }
 }

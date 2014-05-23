@@ -1,9 +1,8 @@
-<?php namespace Belt;
+<?php
+namespace Belt;
 
-use Closure;
-
-class Arrays {
-
+class Arrays
+{
     /**
      * Get the first n elements.
      *
@@ -11,7 +10,7 @@ class Arrays {
      * @param integer $amount
      * @return mixed|array
      */
-    public function first(array $elements, $amount = 1)
+    public static function first(array $elements, $amount = 1)
     {
         $elements = array_slice($elements, 0, $amount);
 
@@ -25,7 +24,7 @@ class Arrays {
      * @param integer $amount
      * @return array
      */
-    public function initial(array $elements, $amount = 1)
+    public static function initial(array $elements, $amount = 1)
     {
         return array_slice($elements, 0, count($elements) - $amount);
     }
@@ -37,7 +36,7 @@ class Arrays {
      * @param integer $index
      * @return array
      */
-    public function rest(array $elements, $index = 1)
+    public static function rest(array $elements, $index = 1)
     {
         return array_slice($elements, $index);
     }
@@ -49,7 +48,7 @@ class Arrays {
      * @param integer $amount
      * @return mixed|array
      */
-    public function last(array $elements, $amount = 1)
+    public static function last(array $elements, $amount = 1)
     {
         $elements = array_slice($elements, count($elements) - $amount);
 
@@ -62,7 +61,7 @@ class Arrays {
      * @param array $elements
      * @return array
      */
-    public function pack(array $elements)
+    public static function pack(array $elements)
     {
         return array_values(array_filter($elements));
     }
@@ -73,18 +72,14 @@ class Arrays {
      * @param array $elements
      * @return array
      */
-    public function flatten(array $elements)
+    public static function flatten(array $elements)
     {
         $level = [];
 
-        foreach ($elements as $node)
-        {
-            if (is_array($node))
-            {
-                $level = array_merge($level, $this->flatten($node));
-            }
-            else
-            {
+        foreach ($elements as $node) {
+            if (is_array($node)) {
+                $level = array_merge($level, self::flatten($node));
+            } else {
                 $level[] = $node;
             }
         }
@@ -100,7 +95,7 @@ class Arrays {
      * @param integer $step
      * @return array
      */
-    public function range($to, $from = 0, $step = 1)
+    public static function range($to, $from = 0, $step = 1)
     {
         return range($from, $to, $step);
     }
@@ -112,30 +107,9 @@ class Arrays {
      * @param array $another
      * @return array
      */
-    public function difference(array $one, array $another)
+    public static function difference(array $one, array $another)
     {
         return array_values(array_diff($one, $another));
-    }
-
-    /**
-     * Remove duplicated values.
-     *
-     * @param array $elements
-     * @param Closure|null $iterator
-     * @return array
-     */
-    public function unique(array $elements, Closure $iterator = null)
-    {
-        if ( ! is_null($iterator))
-        {
-            $elements = array_filter($elements, $iterator);
-        }
-        else
-        {
-            $elements = array_unique($elements);
-        }
-
-        return array_values($elements);
     }
 
     /**
@@ -145,14 +119,66 @@ class Arrays {
      * @param array $ignore
      * @return array
      */
-    public function without(array $elements, array $ignore)
+    public static function without(array $elements, array $ignore)
     {
-        foreach ($elements as $key => $node)
-        {
-            if (in_array($node, $ignore, true))
-            {
+        foreach ($elements as $key => $node) {
+            if (in_array($node, $ignore, true)) {
                 unset ($elements[$key]);
             }
+        }
+
+        return array_values($elements);
+    }
+
+    /**
+     * Get the index of the first match.
+     *
+     * @param array $elements
+     * @param mixed $element
+     * @return integer
+     */
+    public static function indexOf(array $elements, $element)
+    {
+        return array_search($element, $elements, true);
+    }
+
+    /**
+     * Return the intersection of two arrays.
+     *
+     * @param array $one
+     * @param array $another
+     * @return array
+     */
+    public static function intersection(array $one, array $another)
+    {
+        return array_values(array_intersect($one, $another));
+    }
+
+    /**
+     * Returns an array containing the unique items in both arrays.
+     *
+     * @param array $one
+     * @param array $another
+     * @return array
+     */
+    public static function union(array $one, array $another)
+    {
+        return self::unique(self::zip($one, $another));
+    }
+
+    /**
+     * Remove duplicated values.
+     *
+     * @param array $elements
+     * @param callable|null $iterator
+     * @return array
+     */
+    public static function unique(array $elements, callable $iterator = null)
+    {
+        if (!is_null($iterator)) {
+            $elements = array_filter($elements, $iterator);
+        } else {
+            $elements = array_unique($elements);
         }
 
         return array_values($elements);
@@ -165,45 +191,8 @@ class Arrays {
      * @param array $another
      * @return array
      */
-    public function zip(array $one, array $another)
+    public static function zip(array $one, array $another)
     {
         return array_merge($one, $another);
     }
-
-    /**
-     * Get the index of the first match.
-     *
-     * @param array $elements
-     * @param mixed $element
-     * @return integer
-     */
-    public function indexOf(array $elements, $element)
-    {
-        return array_search($element, $elements, true);
-    }
-
-    /**
-     * Return the intersection of two arrays.
-     *
-     * @param array $one
-     * @param array $another
-     * @return array
-     */
-    public function intersection(array $one, array $another)
-    {
-        return array_values(array_intersect($one, $another));
-    }
-
-    /**
-     * Returns an array containing the unique items in both arrays.
-     *
-     * @param array $one
-     * @param array $another
-     * @return array
-     */
-    public function union(array $one, array $another)
-    {
-        return $this->unique($this->zip($one, $another));
-    }
-
 }
