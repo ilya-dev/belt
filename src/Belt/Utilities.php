@@ -1,9 +1,8 @@
-<?php namespace Belt;
+<?php
+namespace Belt;
 
-use Closure;
-
-class Utilities {
-
+class Utilities
+{
     /**
      * Generate a unique identifier.
      *
@@ -41,16 +40,13 @@ class Utilities {
      * Invoke a $closure $number of times.
      *
      * @param integer $number
-     * @param Closure $closure
+     * @param callable $closure
      * @return void
      */
-    public function times($number, Closure $closure)
+    public function times($number, callable $closure)
     {
-        foreach (range(1, $number) as $index)
-        {
+        foreach (range(1, $number) as $index) {
             $closure();
         }
     }
-
 }
-

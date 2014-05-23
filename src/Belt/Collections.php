@@ -1,21 +1,20 @@
-<?php namespace Belt;
+<?php
+namespace Belt;
 
-use Closure;
 use Countable;
 
-class Collections {
-
+class Collections
+{
     /**
      * Iterate through $collection using $iterator.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return void
      */
-    public function each(array $collection, Closure $iterator)
+    public function each(array $collection, callable $iterator)
     {
-        foreach ($collection as $key => $node)
-        {
+        foreach ($collection as $key => $node) {
             $iterator($key, $node);
         }
     }
@@ -24,13 +23,12 @@ class Collections {
      * "Map" through $collection using $iterator.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return array
      */
-    public function map(array $collection, Closure $iterator)
+    public function map(array $collection, callable $iterator)
     {
-        foreach ($collection as $key => $node)
-        {
+        foreach ($collection as $key => $node) {
             $collection[$key] = $iterator($key, $node);
         }
 
@@ -45,7 +43,7 @@ class Collections {
      */
     public function toArray($value)
     {
-        return (array) $value;
+        return (array)$value;
     }
 
     /**
@@ -56,8 +54,7 @@ class Collections {
      */
     public function size($value)
     {
-        if (is_array($value) or ($value instanceof Countable))
-        {
+        if (is_array($value) or ($value instanceof Countable)) {
             return count($value);
         }
 
@@ -81,15 +78,13 @@ class Collections {
      * Check whether any values in $collection pass $iterator.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return boolean
      */
-    public function any(array $collection, Closure $iterator)
+    public function any(array $collection, callable $iterator)
     {
-        foreach ($collection as $node)
-        {
-            if ($iterator($node))
-            {
+        foreach ($collection as $node) {
+            if ($iterator($node)) {
                 return true;
             }
         }
@@ -101,15 +96,13 @@ class Collections {
      * Check whether all values in $collection pass $iterator.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return boolean
      */
-    public function all(array $collection, Closure $iterator)
+    public function all(array $collection, callable $iterator)
     {
-        foreach ($collection as $node)
-        {
-            if ( ! $iterator($node))
-            {
+        foreach ($collection as $node) {
+            if (!$iterator($node)) {
                 return false;
             }
         }
@@ -121,15 +114,13 @@ class Collections {
      * Run $iterator and remove all failing items in $collection.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return array
      */
-    public function reject(array $collection, Closure $iterator)
+    public function reject(array $collection, callable $iterator)
     {
-        foreach ($collection as $key => $node)
-        {
-            if ( ! $iterator($node))
-            {
+        foreach ($collection as $key => $node) {
+            if (!$iterator($node)) {
                 unset($collection[$key]);
             }
         }
@@ -148,10 +139,8 @@ class Collections {
     {
         $values = [];
 
-        foreach ($collection as $node)
-        {
-            if ( ! isset($node[$key]))
-            {
+        foreach ($collection as $node) {
+            if (!isset($node[$key])) {
                 continue;
             }
 
@@ -189,11 +178,11 @@ class Collections {
      * Reduce $collection into a single value using $iterator.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @param mixed $initial
      * @return mixed
      */
-    public function reduce(array $collection, Closure $iterator, $initial = 0)
+    public function reduce(array $collection, callable $iterator, $initial = 0)
     {
         return array_reduce($collection, $iterator, $initial);
     }
@@ -202,10 +191,10 @@ class Collections {
      * Return $collection sorted in ascending order based on $iterator results.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return array
      */
-    public function sortBy(array $collection, Closure $iterator)
+    public function sortBy(array $collection, callable $iterator)
     {
         $collection = array_map($iterator, $collection);
 
@@ -218,15 +207,14 @@ class Collections {
      * Group values in $collection by $iterator's return value.
      *
      * @param array $collection
-     * @param Closure $iterator
+     * @param callable $iterator
      * @return array
      */
-    public function groupBy(array $collection, Closure $iterator)
+    public function groupBy(array $collection, callable $iterator)
     {
         $groups = [];
 
-        foreach ($collection as $node)
-        {
+        foreach ($collection as $node) {
             $groups[$iterator($node)][] = $node;
         }
 
@@ -260,6 +248,4 @@ class Collections {
 
         return reset($collection);
     }
-
 }
-

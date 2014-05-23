@@ -1,20 +1,21 @@
-<?php namespace Belt;
+<?php
+namespace Belt;
 
-use Closure;
+use ReflectionClass;
+use ReflectionMethod;
 use Traversable;
-use ReflectionClass, ReflectionMethod;
 use DateTime;
 
-class Objects {
-
+class Objects
+{
     /**
      * Invoke $closure on $object, then return $object.
      *
      * @param mixed $object
-     * @param Closure $closure
+     * @param callable $closure
      * @return mixed
      */
-    public function apply($object, Closure $closure)
+    public function apply($object, callable $closure)
     {
         $closure($object);
 
@@ -41,7 +42,7 @@ class Objects {
      */
     public function keys($object)
     {
-        return array_keys((array) $object);
+        return array_keys((array)$object);
     }
 
     /**
@@ -52,7 +53,7 @@ class Objects {
      */
     public function values($object)
     {
-        return array_values((array) $object);
+        return array_values((array)$object);
     }
 
     /**
@@ -64,8 +65,7 @@ class Objects {
      */
     public function extend($source, $destination)
     {
-        foreach($source as $key => $value)
-        {
+        foreach ($source as $key => $value) {
             $destination->{$key} = $value;
         }
 
@@ -81,20 +81,16 @@ class Objects {
      */
     public function defaults($object, $defaults)
     {
-        if (is_array($defaults))
-        {
-            foreach ($defaults as $default)
-            {
+        if (is_array($defaults)) {
+            foreach ($defaults as $default) {
                 $this->defaults($object, $default);
             }
 
             return $object;
         }
 
-        foreach ($defaults as $key => $value)
-        {
-            if ( ! property_exists($object, $key))
-            {
+        foreach ($defaults as $key => $value) {
+            if (!property_exists($object, $key)) {
                 $object->{$key} = $value;
             }
         }
@@ -123,8 +119,7 @@ class Objects {
     {
         $methods = (new ReflectionClass($object))->getMethods(ReflectionMethod::IS_PUBLIC);
 
-        $iterator = function(ReflectionMethod $method)
-        {
+        $iterator = function (ReflectionMethod $method) {
             return $method->getName();
         };
 
@@ -216,7 +211,7 @@ class Objects {
      */
     public function isFunction($value)
     {
-        return ($value instanceof Closure);
+        return is_callable($value);
     }
 
     /**
@@ -252,6 +247,4 @@ class Objects {
     {
         return empty ($value);
     }
-
 }
-

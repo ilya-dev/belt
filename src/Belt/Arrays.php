@@ -1,9 +1,8 @@
-<?php namespace Belt;
+<?php
+namespace Belt;
 
-use Closure;
-
-class Arrays {
-
+class Arrays
+{
     /**
      * Get the first n elements.
      *
@@ -77,14 +76,10 @@ class Arrays {
     {
         $level = [];
 
-        foreach ($elements as $node)
-        {
-            if (is_array($node))
-            {
+        foreach ($elements as $node) {
+            if (is_array($node)) {
                 $level = array_merge($level, $this->flatten($node));
-            }
-            else
-            {
+            } else {
                 $level[] = $node;
             }
         }
@@ -118,27 +113,6 @@ class Arrays {
     }
 
     /**
-     * Remove duplicated values.
-     *
-     * @param array $elements
-     * @param Closure|null $iterator
-     * @return array
-     */
-    public function unique(array $elements, Closure $iterator = null)
-    {
-        if ( ! is_null($iterator))
-        {
-            $elements = array_filter($elements, $iterator);
-        }
-        else
-        {
-            $elements = array_unique($elements);
-        }
-
-        return array_values($elements);
-    }
-
-    /**
      * Remove all instances of $ignore found in $elements (=== is used).
      *
      * @param array $elements
@@ -147,27 +121,13 @@ class Arrays {
      */
     public function without(array $elements, array $ignore)
     {
-        foreach ($elements as $key => $node)
-        {
-            if (in_array($node, $ignore, true))
-            {
+        foreach ($elements as $key => $node) {
+            if (in_array($node, $ignore, true)) {
                 unset ($elements[$key]);
             }
         }
 
         return array_values($elements);
-    }
-
-    /**
-     * Merge two arrays.
-     *
-     * @param array $one
-     * @param array $another
-     * @return array
-     */
-    public function zip(array $one, array $another)
-    {
-        return array_merge($one, $another);
     }
 
     /**
@@ -206,4 +166,33 @@ class Arrays {
         return $this->unique($this->zip($one, $another));
     }
 
+    /**
+     * Remove duplicated values.
+     *
+     * @param array $elements
+     * @param callable|null $iterator
+     * @return array
+     */
+    public function unique(array $elements, callable $iterator = null)
+    {
+        if (!is_null($iterator)) {
+            $elements = array_filter($elements, $iterator);
+        } else {
+            $elements = array_unique($elements);
+        }
+
+        return array_values($elements);
+    }
+
+    /**
+     * Merge two arrays.
+     *
+     * @param array $one
+     * @param array $another
+     * @return array
+     */
+    public function zip(array $one, array $another)
+    {
+        return array_merge($one, $another);
+    }
 }
