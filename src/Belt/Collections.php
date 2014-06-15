@@ -195,12 +195,7 @@ class Collections {
      */
     public function reduce(array $collection, Closure $iterator, $initial = 0)
     {
-        foreach ($collection as $node)
-        {
-            $initial = $iterator($initial, $node);
-        }
-
-        return $initial;
+        return array_reduce($collection, $iterator, $initial);
     }
 
     /**
