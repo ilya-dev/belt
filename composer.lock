@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "c27f48e3944ca4aa2f285d5216979a48",
+    "hash": "f4cbe88b856ef6029376c4cf227427b2",
     "packages": [
 
     ],
@@ -171,32 +172,34 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "ef20f1f58d7f693ee888353962bd2db336e3bbcb"
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/ef20f1f58d7f693ee888353962bd2db336e3bbcb",
-                "reference": "ef20f1f58d7f693ee888353962bd2db336e3bbcb",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
+                "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -222,28 +225,31 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-03-01 17:35:04"
+            "time": "2014-05-22 08:54:24"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501"
+                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/4708b8cd41984a5ba29fe7dd40716f7f761ac501",
-                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
+                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/dependency-injection": "~2.0"
+                "psr/log": "~1.0",
+                "symfony/config": "~2.0",
+                "symfony/dependency-injection": "~2.0",
+                "symfony/stopwatch": "~2.2"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -252,7 +258,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -278,21 +284,21 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:09"
+            "time": "2014-04-29 10:13:57"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "ab301c7d21f536c34ab6c2c79dba8d465104c518"
+                "reference": "307aad2c541bbdf43183043645e186ef2cd6b973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/ab301c7d21f536c34ab6c2c79dba8d465104c518",
-                "reference": "ab301c7d21f536c34ab6c2c79dba8d465104c518",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/307aad2c541bbdf43183043645e186ef2cd6b973",
+                "reference": "307aad2c541bbdf43183043645e186ef2cd6b973",
                 "shasum": ""
             },
             "require": {
@@ -301,7 +307,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -327,21 +333,21 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-03-01 17:35:04"
+            "time": "2014-05-22 13:47:45"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd"
+                "reference": "b4b09c68ec2f2727574544ef0173684281a5033c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
-                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b4b09c68ec2f2727574544ef0173684281a5033c",
+                "reference": "b4b09c68ec2f2727574544ef0173684281a5033c",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +356,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -376,7 +382,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-03-12 18:29:58"
+            "time": "2014-05-16 14:25:18"
         }
     ],
     "aliases": [

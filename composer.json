@@ -1,10 +1,7 @@
 {
     "name": "ilya/belt",
-    "description": "A handful of tools for PHP devs",
+    "description": "A handful of tools for PHP developers.",
     "keywords": ["php", "utilities", "tools", "arrays", "collections", "objects", "functions"],
-    "require-dev": {
-        "phpspec/phpspec": "~2"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -12,12 +9,15 @@
             "email": "public.ilya.s@gmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Belt\\": "src/Belt/"
-        }
-    },
     "require": {
         "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Belt\\": "src/Belt"
+        }
     }
 }
